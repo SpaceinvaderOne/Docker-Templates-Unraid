@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>MacinaBox</Name>
+  <Repository>spaceinvaderone/test</Repository>
+  <Registry>https://hub.docker.com/r/spaceinvaderone/macinabox</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support/>
+  <Project>https://github.com/SpaceinvaderOne/Macinabox</Project>
+  <Overview>&#xD;
+Macinabox&#xD;
+&#xD;
+This container can download MacOS and install all files needed to run the VM.&#xD;
+All you need to do is run the VM created in the VM manager after running this container.&#xD;
+&#xD;
+Usage&#xD;
+&#xD;
+Install VM 		--full  will download MacOS and install needed files into your vm location&#xD;
+           		--prepare will download MacOS and put all needed files into appdat ready for manual use.&#xD;
+		   &#xD;
+		   &#xD;
+MacOS version  	Choose version from below&#xD;
+				--mojave&#xD;
+				--high-sierra&#xD;
+				--catalina&#xD;
+				&#xD;
+Vm image      Location of your vm share ( defualt /mnt/user/domains/ )&#xD;
+  </Overview>
+  <Category>Tools: </Category>
+  <WebUI>https://www.youtube.com/watch?v=YWT4oOz2VK8</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Macinabox/master/domainfiles/icon/osx.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1571950383</DateInstalled>
+  <DonateText>I had to drink many beers making this so if you like it so please then consider buying me another beer!! :P</DonateText>
+  <DonateLink>https://www.paypal.me/spaceinvader</DonateLink>
+  <Description>&#xD;
+Macinabox&#xD;
+&#xD;
+This container can download MacOS and install all files needed to run the VM.&#xD;
+All you need to do is run the VM created in the VM manager after running this container.&#xD;
+&#xD;
+Usage&#xD;
+&#xD;
+Install VM 		--full  will download MacOS and install needed files into your vm location&#xD;
+           		--prepare will download MacOS and put all needed files into appdat ready for manual use.&#xD;
+		   &#xD;
+		   &#xD;
+MacOS version  	Choose version from below&#xD;
+				--mojave&#xD;
+				--high-sierra&#xD;
+				--catalina&#xD;
+				&#xD;
+Vm image      Location of your vm share ( defualt /mnt/user/domains/ )&#xD;
+  </Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/domains/</HostDir>
+      <ContainerDir>/image</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/etc/libvirt/qemu/</HostDir>
+      <ContainerDir>/xml</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/macinabox/</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/macinabox/Basesystem</HostDir>
+      <ContainerDir>/Macinabox/tools/FetchMacOS/BaseSystem</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>--catalina</Value>
+      <Name>flavour</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>--full-install</Value>
+      <Name>vminstall</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>64G</Value>
+      <Name>vdisksize</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>qcow2</Value>
+      <Name>TYPE</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Operating system" Target="flavour" Default="--catalina|--mojave|--high-sierra" Mode="" Description="Choose macOS version" Type="Variable" Display="always" Required="true" Mask="false">--catalina</Config>
+  <Config Name="VM Images location" Target="/image" Default="" Mode="rw" Description="normally /mnt/users/domains" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/domains/</Config>
+  <Config Name="XML location" Target="/xml" Default="/etc/libvirt/qemu/|/mnt/user/appdata/macinabox/xml" Mode="rw" Description="location of vm xml templates (dont change)" Type="Path" Display="always" Required="true" Mask="false">/etc/libvirt/qemu/</Config>
+  <Config Name="Install vm " Target="vminstall" Default="--full-install|--prepare-install" Mode="" Description="Full or preparation install" Type="Variable" Display="always" Required="false" Mask="false">--full-install</Config>
+  <Config Name="vdisk size" Target="vdisksize" Default="" Mode="" Description="Enter desired vdisk size" Type="Variable" Display="always" Required="false" Mask="false">64G</Config>
+  <Config Name="vdisk type" Target="TYPE" Default="qcow2|raw" Mode="" Description="Choose vdisk type" Type="Variable" Display="always" Required="true" Mask="false">qcow2</Config>
+  <Config Name="appdata" Target="/config" Default="" Mode="rw" Description="Appdata for macinabox" Type="Path" Display="advanced-hide" Required="false" Mask="false">/mnt/user/appdata/macinabox/</Config>
+  <Config Name="Basesystem" Target="/Macinabox/tools/FetchMacOS/BaseSystem" Default="" Mode="rw" Description="Baseimage temp" Type="Path" Display="advanced-hide" Required="false" Mask="false">/mnt/user/appdata/macinabox/Basesystem</Config>
+</Container>
