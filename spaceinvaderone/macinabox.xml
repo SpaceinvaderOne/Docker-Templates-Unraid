@@ -12,7 +12,7 @@
   <Overview>&#xD;
 Macinabox&#xD;
 &#xD;
-This container can download MacOS and install all files needed to run the VM.&#xD;
+This container can download MacOS and install all files needed to run as an Unraid KVM virtual machine.&#xD;
 All you need to do is run the VM created in the VM manager after running this container.&#xD;
 &#xD;
 Usage&#xD;
@@ -35,7 +35,7 @@ Vm image      Location of your vm share ( defualt /mnt/user/domains/ )&#xD;
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1571950383</DateInstalled>
+  <DateInstalled>1571951270</DateInstalled>
   <DonateText>I had to drink many beers making this so if you like it so please then consider buying me another beer!! :P</DonateText>
   <DonateLink>https://www.paypal.me/spaceinvader</DonateLink>
   <Description>&#xD;
