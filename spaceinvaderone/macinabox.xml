@@ -11,8 +11,6 @@
   <Project>https://github.com/SpaceinvaderOne/Macinabox</Project>
   <Overview>&#xD;
 **Macinabox**&#xD;
-To easily read this toggle to advanced with (top right)&#xD;
-&#xD;
 This container can download macOS either Catalina, Mojave or HighSierra. It will download the install media from Apple servers and convert it to a usable format for use for a VM.&#xD;
 It will also create the correct XML for the VM along with the corresponding icon.&#xD;
 It can be run in 2 ways as a full install (easiest) which will set up everything or preparation install which will prepare all the files and put them in the AppData folder under macinabox.&#xD;
