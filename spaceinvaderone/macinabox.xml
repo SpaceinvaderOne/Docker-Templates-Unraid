@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>true</Privileged>
-  <Support/>
+  <Support>https://forums.unraid.net/topic/84601-support-spaceinvaderone-macinabox/</Support>
   <Project>https://github.com/SpaceinvaderOne/Macinabox</Project>
   <Overview>&#xD;
 **Macinabox**&#xD;
