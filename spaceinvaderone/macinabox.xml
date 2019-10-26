@@ -35,7 +35,7 @@ choose type od vdisk  qcow2  or raw&#xD;
 &#xD;
 vdisksize     the size you want your vdisk to be created</Overview>
   <Category>Tools: </Category>
-  <WebUI>https://www.youtube.com/watch?v=YWT4oOz2VK8</WebUI>
+  <WebUI></WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Macinabox/master/domainfiles/icon/osx.png</Icon>
   <ExtraParams/>
