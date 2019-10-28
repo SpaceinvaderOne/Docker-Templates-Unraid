@@ -33,7 +33,7 @@
  &#xD;
  vdisksize     the size you want your vdisk to be created</Overview>
   <Category>Tools:Utilities</Category>
-  <WebUI/>
+  <WebUI>https://youtu.be/g_jk9D2e5q0</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/macinabox.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/docker_icons/Macinabox.png</Icon>
   <ExtraParams/>
