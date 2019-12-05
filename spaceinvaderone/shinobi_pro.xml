@@ -46,7 +46,7 @@ Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap
   <Category>HomeAutomation: MediaApp:Video MediaServer:Video</Category>
   <WebUI>http://[IP]:[PORT:8080]</WebUI>
   <TemplateURL/>
-  <Icon>https://shinobi.video//libs/assets/icon/apple-touch-icon-57x57.png</Icon>
+  <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/docker_icons/shinobi.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
