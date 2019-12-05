@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>shinobi_pro</Name>
+  <Repository>spaceinvaderone/shinobi_pro_unraid:latest</Repository>
+  <Registry>https://hub.docker.com/r/spaceinvaderone/shinobi_pro_unraid</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://shinobi.video/</Project>
+  <Overview>Shinobi is the Open Source CCTV Solution written in Node.JS. Designed with multiple account system, Streams by WebSocket, and Save to WebM. Shinobi can record IP Cameras and Local Cameras.&#xD;
+Features&#xD;
+Time-lapse Viewer (Watch a hours worth of footage in a few minutes)&#xD;
+2-Factor Authentication&#xD;
+Defeats stream limit imposed by browsers&#xD;
+With Base64 (Stream Type) and JPEG Mode (Option)&#xD;
+Records IP Cameras and Local Cameras&#xD;
+Streams by WebSocket, HLS (includes audio), and MJPEG&#xD;
+Save to WebM and MP4&#xD;
+Can save Audio&#xD;
+Push Events - When a video is finished it will appear in the dashboard without a refresh&#xD;
+Region Motion Detection (Similar to ZoneMinder Zone Detection)&#xD;
+Represented by a Motion Guage on each monitor&#xD;
+"No Motion" Notifications&#xD;
+1 Process for Each Camera to do both, Recording and Streaming&#xD;
+Timeline for viewing Motion Events and Videos&#xD;
+Sub-Accounts with permissions&#xD;
+Monitor Viewing&#xD;
+Monitor Editing&#xD;
+Video Deleting&#xD;
+Separate API keys for sub account&#xD;
+Cron Filters can be set based on master account&#xD;
+Stream Analyzer built-in (FFprobe GUI)&#xD;
+Monitor Groups&#xD;
+Can snapshot images from stream directly&#xD;
+Lower Bandwith Mode (JPEG Mode)&#xD;
+Snapshot (cgi-bin) must be enabled in Monitor Settings&#xD;
+Control Cameras from Interface&#xD;
+API&#xD;
+Get videos&#xD;
+Get monitors&#xD;
+Change monitor modes : Disabled, Watch, Record&#xD;
+Embedding streams&#xD;
+Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap</Overview>
+  <Category>HomeAutomation: MediaApp:Video MediaServer:Video</Category>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <TemplateURL/>
+  <Icon>https://shinobi.video//libs/assets/icon/apple-touch-icon-57x57.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1575573211</DateInstalled>
+  <DonateText/>
+  <DonateLink>https://www.paypal.me/spaceinvader</DonateLink>
+  <Description>Shinobi is the Open Source CCTV Solution written in Node.JS. Designed with multiple account system, Streams by WebSocket, and Save to WebM. Shinobi can record IP Cameras and Local Cameras.&#xD;
+Features&#xD;
+Time-lapse Viewer (Watch a hours worth of footage in a few minutes)&#xD;
+2-Factor Authentication&#xD;
+Defeats stream limit imposed by browsers&#xD;
+With Base64 (Stream Type) and JPEG Mode (Option)&#xD;
+Records IP Cameras and Local Cameras&#xD;
+Streams by WebSocket, HLS (includes audio), and MJPEG&#xD;
+Save to WebM and MP4&#xD;
+Can save Audio&#xD;
+Push Events - When a video is finished it will appear in the dashboard without a refresh&#xD;
+Region Motion Detection (Similar to ZoneMinder Zone Detection)&#xD;
+Represented by a Motion Guage on each monitor&#xD;
+"No Motion" Notifications&#xD;
+1 Process for Each Camera to do both, Recording and Streaming&#xD;
+Timeline for viewing Motion Events and Videos&#xD;
+Sub-Accounts with permissions&#xD;
+Monitor Viewing&#xD;
+Monitor Editing&#xD;
+Video Deleting&#xD;
+Separate API keys for sub account&#xD;
+Cron Filters can be set based on master account&#xD;
+Stream Analyzer built-in (FFprobe GUI)&#xD;
+Monitor Groups&#xD;
+Can snapshot images from stream directly&#xD;
+Lower Bandwith Mode (JPEG Mode)&#xD;
+Snapshot (cgi-bin) must be enabled in Monitor Settings&#xD;
+Control Cameras from Interface&#xD;
+API&#xD;
+Get videos&#xD;
+Get monitors&#xD;
+Change monitor modes : Disabled, Watch, Record&#xD;
+Embedding streams&#xD;
+Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/disks/cctv/</HostDir>
+      <ContainerDir>/opt/shinobi/videos</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/shinobipro</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/shinobipro/database</HostDir>
+      <ContainerDir>/var/lib/mysql</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/shinobipro/customautoload</HostDir>
+      <ContainerDir>/opt/shinobi/libs/customAutoLoad</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>admin</Value>
+      <Name>ADMIN_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>password</Value>
+      <Name>ADMIN_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Web port" Target="8080" Default="" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
+  <Config Name="username for superuser" Target="ADMIN_USER" Default="" Mode="" Description="Container Variable: ADMIN_USER" Type="Variable" Display="always" Required="false" Mask="false">admin</Config>
+  <Config Name="password for superuser" Target="ADMIN_PASSWORD" Default="" Mode="" Description="Container Variable: ADMIN_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">password</Config>
+  <Config Name="video storage location" Target="/opt/shinobi/videos" Default="" Mode="rw" Description="/opt/shinobi/videos" Type="Path" Display="always" Required="true" Mask="false">/mnt/disks/cctv/</Config>
+  <Config Name="appdata location" Target="/config" Default="" Mode="rw" Description="/config" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/shinobipro</Config>
+  <Config Name="maria db database location" Target="/var/lib/mysql" Default="" Mode="rw" Description="/var/lib/mysql" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/shinobipro/database</Config>
+  <Config Name="customautoload modules" Target="/opt/shinobi/libs/customAutoLoad" Default="" Mode="rw" Description="Container Path: /opt/shinobi/libs/customAutoLoad" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/shinobipro/customautoload</Config>
+</Container>
