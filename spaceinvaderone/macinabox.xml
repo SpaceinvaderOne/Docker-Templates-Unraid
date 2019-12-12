@@ -122,6 +122,6 @@ vdisksize     the size you want your vdisk to be created</Description>
   <Config Name="Install vm " Target="vminstall" Default="--full-install|--prepare-install" Mode="" Description="Full or preparation install" Type="Variable" Display="always" Required="false" Mask="false">--full-install</Config>
   <Config Name="vdisk size" Target="vdisksize" Default="" Mode="" Description="Enter desired vdisk size" Type="Variable" Display="always" Required="false" Mask="false">64G</Config>
   <Config Name="vdisk type" Target="TYPE" Default="raw|qcow2" Mode="" Description="Choose vdisk type" Type="Variable" Display="always" Required="true" Mask="false">raw</Config>
-  <Config Name="appdata" Target="/config" Default="/mnt/user/appdata/MacinaBox" Mode="rw" Description="Appdata for macinabox" Type="Path" Display="advanced-hide" Required="false" Mask="false">/mnt/user/appdata/MacinaBox</Config>
+  <Config Name="appdata" Target="/config" Default="/mnt/user/appdata/MacinaBox" Mode="rw" Description="Appdata for macinabox" Type="Path" Display="advanced-hide" Required="false" Mask="false">/mnt/user/appdata/macinabox</Config>
   <Config Name="Basesystem" Target="/Macinabox/tools/FetchMacOS/BaseSystem" Default="" Mode="rw" Description="Baseimage temp" Type="Path" Display="advanced-hide" Required="false" Mask="false">/mnt/user/appdata/macinabox/Basesystem</Config>
 </Container>
