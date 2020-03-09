@@ -39,34 +39,32 @@
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1572130976</DateInstalled>
+  <DateInstalled>1583779102</DateInstalled>
   <DonateText>I had to drink many beers making this so if you like it then please consider buying me another beer!! :D</DonateText>
   <DonateLink>https://www.paypal.me/spaceinvader</DonateLink>
-  <Description>&#xD;
-**Macinabox**&#xD;
-This container can download macOS either Catalina, Mojave or HighSierra. It will download the install media from Apple servers and convert it to a usable format for use for a VM.&#xD;
-It will also create the correct XML for the VM along with the corresponding icon.&#xD;
-It can be run in 2 ways as a full install (easiest) which will set up everything or preparation install which will prepare all the files and put them in the AppData folder under macinabox.&#xD;
-&#xD;
-Usage&#xD;
-&#xD;
-Install VM 		--full &#xD;
- will download MacOS and install needed files into your VM location. (requires the array to the stopped and started after the container is run for VM to show in the VM list)&#xD;
-           		--prepare&#xD;
-  will download MacOS and put all needed files into AppData ready for manual use.&#xD;
-		   &#xD;
-		   &#xD;
-macOS version  	Choose version from below&#xD;
-				--mojave&#xD;
-				--high-sierra&#xD;
-				--catalina&#xD;
-				&#xD;
-Vm image      Location of your vm share ( defualt /mnt/user/domains/ )&#xD;
-&#xD;
-TYPE&#xD;
-choose type od vdisk  qcow2  or raw&#xD;
-&#xD;
-vdisksize     the size you want your vdisk to be created</Description>
+  <Description>This container can download macOS either Catalina, Mojave or HighSierra. It will download the install media from Apple servers and convert it to a usable format for use for a VM.&#xD;
+ It will also create the correct XML for the VM along with the corresponding icon.&#xD;
+ It can be run in 2 ways as a full install (easiest) which will set up everything or preparation install which will prepare all the files and put them in the AppData folder under macinabox.&#xD;
+ &#xD;
+ Usage&#xD;
+ &#xD;
+ Install VM 		--full &#xD;
+  will download MacOS and install needed files into your VM location. (requires the array to the stopped and started after the container is run for VM to show in the VM list)&#xD;
+            		--prepare&#xD;
+   will download MacOS and put all needed files into AppData ready for manual use.&#xD;
+ 		   &#xD;
+ 		   &#xD;
+ macOS version  	Choose version from below&#xD;
+ 				--mojave&#xD;
+ 				--high-sierra&#xD;
+ 				--catalina&#xD;
+ 				&#xD;
+ Vm image      Location of your vm share ( defualt /mnt/user/domains/ )&#xD;
+ &#xD;
+ TYPE&#xD;
+ choose type od vdisk  qcow2  or raw&#xD;
+ &#xD;
+ vdisksize     the size you want your vdisk to be created</Description>
   <Networking>
     <Mode>host</Mode>
     <Publish/>
@@ -83,12 +81,12 @@ vdisksize     the size you want your vdisk to be created</Description>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/MacinaBox</HostDir>
+      <HostDir>/mnt/user/appdata/macinabox</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/macinabox/Basesystem</HostDir>
+      <HostDir>/mnt/user/appdata/macinabox/basesystem</HostDir>
       <ContainerDir>/Macinabox/tools/FetchMacOS/BaseSystem</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -100,7 +98,7 @@ vdisksize     the size you want your vdisk to be created</Description>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>--full-install</Value>
+      <Value>--prepare-install</Value>
       <Name>vminstall</Name>
       <Mode/>
     </Variable>
@@ -119,9 +117,9 @@ vdisksize     the size you want your vdisk to be created</Description>
   <Config Name="Operating system" Target="flavour" Default="--mojave|--catalina|--high-sierra" Mode="" Description="Choose macOS version" Type="Variable" Display="always" Required="true" Mask="false">--catalina</Config>
   <Config Name="VM Images location" Target="/image" Default="" Mode="rw" Description="normally /mnt/users/domains" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/domains/</Config>
   <Config Name="XML location" Target="/xml" Default="/etc/libvirt/qemu/" Mode="rw" Description="location of vm xml templates (dont change)" Type="Path" Display="always" Required="true" Mask="false">/etc/libvirt/qemu/</Config>
-  <Config Name="Install vm " Target="vminstall" Default="--full-install|--prepare-install" Mode="" Description="Full or preparation install" Type="Variable" Display="always" Required="false" Mask="false">--full-install</Config>
+  <Config Name="Install vm " Target="vminstall" Default="--full-install|--prepare-install" Mode="" Description="Full or preparation install" Type="Variable" Display="always" Required="false" Mask="false">--prepare-install</Config>
   <Config Name="vdisk size" Target="vdisksize" Default="" Mode="" Description="Enter desired vdisk size" Type="Variable" Display="always" Required="false" Mask="false">64G</Config>
   <Config Name="vdisk type" Target="TYPE" Default="raw|qcow2" Mode="" Description="Choose vdisk type" Type="Variable" Display="always" Required="true" Mask="false">raw</Config>
   <Config Name="appdata" Target="/config" Default="/mnt/user/appdata/MacinaBox" Mode="rw" Description="Appdata for macinabox" Type="Path" Display="advanced-hide" Required="false" Mask="false">/mnt/user/appdata/macinabox</Config>
-  <Config Name="Basesystem" Target="/Macinabox/tools/FetchMacOS/BaseSystem" Default="" Mode="rw" Description="Baseimage temp" Type="Path" Display="advanced-hide" Required="false" Mask="false">/mnt/user/appdata/macinabox/Basesystem</Config>
+  <Config Name="Basesystem" Target="/Macinabox/tools/FetchMacOS/BaseSystem" Default="" Mode="rw" Description="Baseimage temp" Type="Path" Display="advanced-hide" Required="false" Mask="false">/mnt/user/appdata/macinabox/basesystem</Config>
 </Container>
