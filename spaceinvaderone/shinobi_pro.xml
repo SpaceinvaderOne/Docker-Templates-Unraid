@@ -46,11 +46,11 @@ Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap
   <Category>HomeAutomation: MediaApp:Video MediaServer:Video</Category>
   <WebUI>http://[IP]:[PORT:8080]</WebUI>
   <TemplateURL/>
-  <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/docker_icons/shinobi.png</Icon>
+  <Icon>https://shinobi.video//libs/assets/icon/apple-touch-icon-57x57.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1575573211</DateInstalled>
+  <DateInstalled>1586273034</DateInstalled>
   <DonateText/>
   <DonateLink>https://www.paypal.me/spaceinvader</DonateLink>
   <Description>Shinobi is the Open Source CCTV Solution written in Node.JS. Designed with multiple account system, Streams by WebSocket, and Save to WebM. Shinobi can record IP Cameras and Local Cameras.&#xD;
@@ -118,6 +118,11 @@ Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap
       <ContainerDir>/opt/shinobi/libs/customAutoLoad</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
+    <Volume>
+      <HostDir>/usr/share/zoneinfo/</HostDir>
+      <ContainerDir>/usr/share/zoneinfo/</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
   </Data>
   <Environment>
     <Variable>
@@ -139,4 +144,5 @@ Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap
   <Config Name="appdata location" Target="/config" Default="" Mode="rw" Description="/config" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/shinobipro</Config>
   <Config Name="maria db database location" Target="/var/lib/mysql" Default="" Mode="rw" Description="/var/lib/mysql" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/shinobipro/database</Config>
   <Config Name="customautoload modules" Target="/opt/shinobi/libs/customAutoLoad" Default="" Mode="rw" Description="Container Path: /opt/shinobi/libs/customAutoLoad" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/shinobipro/customautoload</Config>
+  <Config Name="Timezone" Target="/usr/share/zoneinfo/" Default="" Mode="ro" Description="Container Path: /usr/share/zoneinfo/" Type="Path" Display="advanced" Required="false" Mask="false">/usr/share/zoneinfo/</Config>
 </Container>
