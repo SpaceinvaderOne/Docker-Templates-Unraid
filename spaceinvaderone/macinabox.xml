@@ -39,7 +39,7 @@
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1586344535</DateInstalled>
+  <DateInstalled>1586344785</DateInstalled>
   <DonateText>I had to drink many beers making this so if you like it then please consider buying me another beer!! :D</DonateText>
   <DonateLink>https://www.paypal.me/spaceinvader</DonateLink>
   <Description>This container can download macOS either Catalina, Mojave or HighSierra. It will download the install media from Apple servers and convert it to a usable format for use for a VM.&#xD;
@@ -120,6 +120,6 @@
   <Config Name="Install vm " Target="vminstall" Default="--full-install|--prepare-install" Mode="" Description="Full or preparation install" Type="Variable" Display="always" Required="false" Mask="false">--prepare-install</Config>
   <Config Name="vdisk size" Target="vdisksize" Default="" Mode="" Description="Enter desired vdisk size" Type="Variable" Display="always" Required="false" Mask="false">64G</Config>
   <Config Name="vdisk type" Target="TYPE" Default="raw|qcow2" Mode="" Description="Choose vdisk type" Type="Variable" Display="always" Required="true" Mask="false">raw</Config>
-  <Config Name="appdata" Target="/config" Default="/mnt/user/appdata/MacinaBox" Mode="rw" Description="Appdata for macinabox" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/macinabox</Config>
+  <Config Name="appdata" Target="/config" Default="/mnt/user/appdata/macinabox" Mode="rw" Description="Appdata for macinabox" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/macinabox</Config>
   <Config Name="Basesystem" Target="/Macinabox/tools/FetchMacOS/BaseSystem" Default="" Mode="rw" Description="Baseimage temp" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/macinabox/Basesystem</Config>
 </Container>
