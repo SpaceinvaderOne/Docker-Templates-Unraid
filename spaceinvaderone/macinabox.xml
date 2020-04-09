@@ -115,7 +115,7 @@
   </Environment>
   <Labels/>
   <Config Name="Operating system" Target="flavour" Default="--mojave|--catalina|--high-sierra" Mode="" Description="Choose macOS version" Type="Variable" Display="always" Required="true" Mask="false">--catalina</Config>
-  <Config Name="VM Images location" Target="/image" Default="" Mode="rw" Description="normally /mnt/users/domains" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/domains/</Config>
+  <Config Name="VM Images location" Target="/image" Default="" Mode="rw" Description="normally /mnt/user/domains" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/domains/</Config>
   <Config Name="XML location" Target="/xml" Default="/etc/libvirt/qemu/" Mode="rw" Description="location of vm xml templates (dont change)" Type="Path" Display="always" Required="true" Mask="false">/etc/libvirt/qemu/</Config>
   <Config Name="Install vm " Target="vminstall" Default="--full-install|--prepare-install" Mode="" Description="Full or preparation install" Type="Variable" Display="always" Required="false" Mask="false">--prepare-install</Config>
   <Config Name="vdisk size" Target="vdisksize" Default="" Mode="" Description="Enter desired vdisk size" Type="Variable" Display="always" Required="false" Mask="false">64G</Config>
