@@ -50,7 +50,7 @@ Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1586273034</DateInstalled>
+  <DateInstalled>1586463275</DateInstalled>
   <DonateText/>
   <DonateLink>https://www.paypal.me/spaceinvader</DonateLink>
   <Description>Shinobi is the Open Source CCTV Solution written in Node.JS. Designed with multiple account system, Streams by WebSocket, and Save to WebM. Shinobi can record IP Cameras and Local Cameras.&#xD;
@@ -104,6 +104,11 @@ Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap
       <Mode>rw</Mode>
     </Volume>
     <Volume>
+      <HostDir>/dev/shm/shinobi</HostDir>
+      <ContainerDir>/dev/shm/streams</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
       <HostDir>/mnt/user/appdata/shinobipro</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
@@ -141,6 +146,7 @@ Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap
   <Config Name="username for superuser" Target="ADMIN_USER" Default="" Mode="" Description="Container Variable: ADMIN_USER" Type="Variable" Display="always" Required="false" Mask="false">admin</Config>
   <Config Name="password for superuser" Target="ADMIN_PASSWORD" Default="" Mode="" Description="Container Variable: ADMIN_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">password</Config>
   <Config Name="video storage location" Target="/opt/shinobi/videos" Default="" Mode="rw" Description="/opt/shinobi/videos" Type="Path" Display="always" Required="true" Mask="false">/mnt/disks/cctv/</Config>
+  <Config Name="Temporary Streams" Target="/dev/shm/streams" Default="" Mode="rw" Description="Temporary Streams" Type="Path" Display="advanced" Required="false" Mask="false">/dev/shm/shinobi</Config>
   <Config Name="appdata location" Target="/config" Default="" Mode="rw" Description="/config" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/shinobipro</Config>
   <Config Name="maria db database location" Target="/var/lib/mysql" Default="" Mode="rw" Description="/var/lib/mysql" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/shinobipro/database</Config>
   <Config Name="customautoload modules" Target="/opt/shinobi/libs/customAutoLoad" Default="" Mode="rw" Description="Container Path: /opt/shinobi/libs/customAutoLoad" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/shinobipro/customautoload</Config>
