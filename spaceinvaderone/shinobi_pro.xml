@@ -3,8 +3,8 @@
   <Name>shinobi_pro</Name>
   <Repository>spaceinvaderone/shinobi_pro_unraid:latest</Repository>
   <Registry>https://hub.docker.com/r/spaceinvaderone/shinobi_pro_unraid</Registry>
-  <Network>bridge</Network>
-  <MyIP/>
+  <Network>br0.50</Network>
+  <MyIP>192.168.5.10</MyIP>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/86293-support-spaceinvaderone-shinobi-pro/</Support>
@@ -45,12 +45,12 @@ Embedding streams&#xD;
 Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap</Overview>
   <Category>HomeAutomation: MediaApp:Video MediaServer:Video</Category>
   <WebUI>http://[IP]:[PORT:8080]</WebUI>
-  <TemplateURL/>
+  <TemplateURL>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/shinobi_pro.xml</TemplateURL>
   <Icon>https://shinobi.video//libs/assets/icon/apple-touch-icon-57x57.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1586463275</DateInstalled>
+  <DateInstalled>1589395477</DateInstalled>
   <DonateText/>
   <DonateLink>https://www.paypal.me/spaceinvader</DonateLink>
   <Description>Shinobi is the Open Source CCTV Solution written in Node.JS. Designed with multiple account system, Streams by WebSocket, and Save to WebM. Shinobi can record IP Cameras and Local Cameras.&#xD;
@@ -88,7 +88,7 @@ Change monitor modes : Disabled, Watch, Record&#xD;
 Embedding streams&#xD;
 Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap</Description>
   <Networking>
-    <Mode>bridge</Mode>
+    <Mode>br0.50</Mode>
     <Publish>
       <Port>
         <HostPort>8080</HostPort>
@@ -101,7 +101,7 @@ Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap
     <Volume>
       <HostDir>/mnt/disks/cctv/</HostDir>
       <ContainerDir>/opt/shinobi/videos</ContainerDir>
-      <Mode>rw</Mode>
+      <Mode>rw,slave</Mode>
     </Volume>
     <Volume>
       <HostDir>/dev/shm/shinobi</HostDir>
@@ -128,6 +128,11 @@ Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap
       <ContainerDir>/usr/share/zoneinfo/</ContainerDir>
       <Mode>ro</Mode>
     </Volume>
+    <Volume>
+      <HostDir>/etc/localtime</HostDir>
+      <ContainerDir>/etc/localtime</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
   </Data>
   <Environment>
     <Variable>
@@ -140,15 +145,58 @@ Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap
       <Name>ADMIN_PASSWORD</Name>
       <Mode/>
     </Variable>
+    <Variable>
+      <Value/>
+      <Name>MYSQL_ROOT_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>3306</Value>
+      <Name>MYSQL_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>majesticflame</Value>
+      <Name>MYSQL_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>ccio</Value>
+      <Name>MYSQL_DATABASE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>localhost</Value>
+      <Name>MYSQL_HOST</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>MYSQL_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>root</Value>
+      <Name>MYSQL_ROOT_USER</Name>
+      <Mode/>
+    </Variable>
   </Environment>
   <Labels/>
   <Config Name="Web port" Target="8080" Default="" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
   <Config Name="username for superuser" Target="ADMIN_USER" Default="" Mode="" Description="Container Variable: ADMIN_USER" Type="Variable" Display="always" Required="false" Mask="false">admin</Config>
   <Config Name="password for superuser" Target="ADMIN_PASSWORD" Default="" Mode="" Description="Container Variable: ADMIN_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">password</Config>
-  <Config Name="video storage location" Target="/opt/shinobi/videos" Default="" Mode="rw" Description="/opt/shinobi/videos" Type="Path" Display="always" Required="true" Mask="false">/mnt/disks/cctv/</Config>
+  <Config Name="video storage location" Target="/opt/shinobi/videos" Default="" Mode="rw,slave" Description="/opt/shinobi/videos" Type="Path" Display="always" Required="true" Mask="false">/mnt/disks/cctv/</Config>
+  <Config Name="MYSQL_ROOT_PASSWORD" Target="MYSQL_ROOT_PASSWORD" Default="" Mode="" Description="MYSQL_ROOT_PASSWORD" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="MYSQL_PORT" Target="MYSQL_PORT" Default="" Mode="" Description="MYSQL_PORT  standard port 3306" Type="Variable" Display="advanced" Required="false" Mask="false">3306</Config>
+  <Config Name="MYSQL_USER" Target="MYSQL_USER" Default="" Mode="" Description="MYSQL_USER" Type="Variable" Display="advanced" Required="false" Mask="false">majesticflame</Config>
+  <Config Name="MYSQL_DATABASE" Target="MYSQL_DATABASE" Default="" Mode="" Description="MYSQL_DATABASE NAME" Type="Variable" Display="advanced" Required="false" Mask="false">ccio</Config>
+  <Config Name="MYSQL_HOST" Target="MYSQL_HOST" Default="" Mode="" Description="MYSQL_HOST leave as localhost for container built in mariadb" Type="Variable" Display="advanced" Required="false" Mask="false">localhost</Config>
   <Config Name="Temporary Streams" Target="/dev/shm/streams" Default="" Mode="rw" Description="Temporary Streams" Type="Path" Display="advanced" Required="false" Mask="false">/dev/shm/shinobi</Config>
   <Config Name="appdata location" Target="/config" Default="" Mode="rw" Description="/config" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/shinobipro</Config>
   <Config Name="maria db database location" Target="/var/lib/mysql" Default="" Mode="rw" Description="/var/lib/mysql" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/shinobipro/database</Config>
   <Config Name="customautoload modules" Target="/opt/shinobi/libs/customAutoLoad" Default="" Mode="rw" Description="Container Path: /opt/shinobi/libs/customAutoLoad" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/shinobipro/customautoload</Config>
-  <Config Name="Timezone" Target="/usr/share/zoneinfo/" Default="" Mode="ro" Description="Container Path: /usr/share/zoneinfo/" Type="Path" Display="advanced" Required="false" Mask="false">/usr/share/zoneinfo/</Config>
+  <Config Name="TIMEZONE" Target="/usr/share/zoneinfo/" Default="" Mode="ro" Description="Container Path: /usr/share/zoneinfo/" Type="Path" Display="advanced" Required="false" Mask="false">/usr/share/zoneinfo/</Config>
+  <Config Name="MYSQL_PASSWORD" Target="MYSQL_PASSWORD" Default="" Mode="" Description="MYSQL_PASSWORD default none for internal mariadb" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="LOCAL TIME" Target="/etc/localtime" Default="" Mode="ro" Description="Container Path: /etc/localtime" Type="Path" Display="advanced" Required="false" Mask="false">/etc/localtime</Config>
+  <Config Name="MYSQL_ROOT_USER" Target="MYSQL_ROOT_USER" Default="" Mode="" Description="MYSQL_ROOT_USER" Type="Variable" Display="advanced" Required="false" Mask="false">root</Config>
 </Container>
