@@ -3,8 +3,8 @@
   <Name>shinobi_pro</Name>
   <Repository>spaceinvaderone/shinobi_pro_unraid:latest</Repository>
   <Registry>https://hub.docker.com/r/spaceinvaderone/shinobi_pro_unraid</Registry>
-  <Network>br0.50</Network>
-  <MyIP>192.168.5.10</MyIP>
+  <Network>bridge</Network>
+  <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/86293-support-spaceinvaderone-shinobi-pro/</Support>
@@ -50,7 +50,7 @@ Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1589396338</DateInstalled>
+  <DateInstalled>1589405218</DateInstalled>
   <DonateText/>
   <DonateLink>https://www.paypal.me/spaceinvader</DonateLink>
   <Description>Shinobi is the Open Source CCTV Solution written in Node.JS. Designed with multiple account system, Streams by WebSocket, and Save to WebM. Shinobi can record IP Cameras and Local Cameras.&#xD;
@@ -88,7 +88,7 @@ Change monitor modes : Disabled, Watch, Record&#xD;
 Embedding streams&#xD;
 Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap</Description>
   <Networking>
-    <Mode>br0.50</Mode>
+    <Mode>bridge</Mode>
     <Publish>
       <Port>
         <HostPort>8080</HostPort>
@@ -109,7 +109,7 @@ Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/shinobipro</HostDir>
+      <HostDir>/mnt/user/appdata/shinobi_pro</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -192,7 +192,7 @@ Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap
   <Config Name="MYSQL_DATABASE" Target="MYSQL_DATABASE" Default="" Mode="" Description="MYSQL_DATABASE NAME" Type="Variable" Display="advanced" Required="false" Mask="false">ccio</Config>
   <Config Name="MYSQL_HOST" Target="MYSQL_HOST" Default="" Mode="" Description="MYSQL_HOST leave as localhost for container built in mariadb" Type="Variable" Display="advanced" Required="false" Mask="false">localhost</Config>
   <Config Name="Temporary Streams" Target="/dev/shm/streams" Default="" Mode="rw" Description="Temporary Streams" Type="Path" Display="advanced" Required="false" Mask="false">/dev/shm/shinobi</Config>
-  <Config Name="appdata location" Target="/config" Default="" Mode="rw" Description="/config" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/shinobipro</Config>
+  <Config Name="appdata location" Target="/config" Default="/mnt/user/appdata/shinobi_pro" Mode="rw" Description="/config" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/shinobi_pro</Config>
   <Config Name="maria db database location" Target="/var/lib/mysql" Default="" Mode="rw" Description="/var/lib/mysql" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/shinobipro/database</Config>
   <Config Name="customautoload modules" Target="/opt/shinobi/libs/customAutoLoad" Default="" Mode="rw" Description="Container Path: /opt/shinobi/libs/customAutoLoad" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/shinobipro/customautoload</Config>
   <Config Name="TIMEZONE" Target="/usr/share/zoneinfo/" Default="" Mode="ro" Description="Container Path: /usr/share/zoneinfo/" Type="Path" Display="advanced" Required="false" Mask="false">/usr/share/zoneinfo/</Config>
