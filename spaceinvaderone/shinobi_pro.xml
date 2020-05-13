@@ -50,7 +50,7 @@ Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1589395477</DateInstalled>
+  <DateInstalled>1589396338</DateInstalled>
   <DonateText/>
   <DonateLink>https://www.paypal.me/spaceinvader</DonateLink>
   <Description>Shinobi is the Open Source CCTV Solution written in Node.JS. Designed with multiple account system, Streams by WebSocket, and Save to WebM. Shinobi can record IP Cameras and Local Cameras.&#xD;
