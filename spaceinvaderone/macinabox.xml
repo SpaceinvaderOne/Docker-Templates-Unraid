@@ -121,5 +121,5 @@
   <Config Name="vdisk size" Target="vdisksize" Default="" Mode="" Description="Enter desired vdisk size" Type="Variable" Display="always" Required="false" Mask="false">64G</Config>
   <Config Name="vdisk type" Target="TYPE" Default="raw|qcow2" Mode="" Description="Choose vdisk type" Type="Variable" Display="always" Required="true" Mask="false">raw</Config>
   <Config Name="appdata" Target="/config" Default="/mnt/user/appdata/macinabox" Mode="rw" Description="Appdata for macinabox" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/macinabox</Config>
-  <Config Name="Basesystem" Target="/Macinabox/tools/FetchMacOS/BaseSystem" Default="" Mode="rw" Description="Baseimage temp" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/macinabox/Basesystem</Config>
+  <Config Name="Basesystem" Target="/Macinabox/tools/FetchMacOS/BaseSystem" Default="" Mode="rw" Description="Baseimage temp" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/macinabox/basesystem</Config>
 </Container>
