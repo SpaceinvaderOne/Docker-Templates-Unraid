@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>shinobi_pro</Name>
+  <Name>shinobipro</Name>
   <Repository>spaceinvaderone/shinobi_pro_unraid:latest</Repository>
   <Registry>https://hub.docker.com/r/spaceinvaderone/shinobi_pro_unraid</Registry>
   <Network>bridge</Network>
@@ -50,7 +50,7 @@ Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1589405218</DateInstalled>
+  <DateInstalled>1589456309</DateInstalled>
   <DonateText/>
   <DonateLink>https://www.paypal.me/spaceinvader</DonateLink>
   <Description>Shinobi is the Open Source CCTV Solution written in Node.JS. Designed with multiple account system, Streams by WebSocket, and Save to WebM. Shinobi can record IP Cameras and Local Cameras.&#xD;
@@ -109,7 +109,7 @@ Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/shinobi_pro</HostDir>
+      <HostDir>/mnt/user/appdata/shinobipro</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
