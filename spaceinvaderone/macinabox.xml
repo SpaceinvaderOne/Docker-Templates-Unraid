@@ -86,7 +86,7 @@
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/macinabox/Basesystem</HostDir>
+      <HostDir>/mnt/user/appdata/macinabox/basesystem</HostDir>
       <ContainerDir>/Macinabox/tools/FetchMacOS/BaseSystem</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
