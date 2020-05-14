@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>MacinaBox</Name>
+  <Name>macinaBox</Name>
   <Repository>spaceinvaderone/macinabox</Repository>
   <Registry>https://hub.docker.com/r/spaceinvaderone/macinabox</Registry>
   <Network>host</Network>
