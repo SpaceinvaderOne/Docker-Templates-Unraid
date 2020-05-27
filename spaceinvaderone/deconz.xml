@@ -2,24 +2,24 @@
 <Container version="2">
   <Name>deconz</Name>
   <Repository>spaceinvaderone/deconz</Repository>
-  <Registry/>
+  <Registry>https://registry.hub.docker.com/r/spaceinvaderone/deconz</Registry>
   <Network>br0</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support/>
+  <Support>https://forums.unraid.net/topic/92946-support-spaceinvaderone-deconz/</Support>
   <Project>https://www.phoscon.de/en/conbee2/</Project>
   <Overview>This Docker image containerizes the deCONZ software from Dresden Elektronik, which controls a ZigBee network using a Conbee USB or RaspBee GPIO serial interface. This image runs deCONZ in "minimal" mode, for control of the ZigBee network via the WebUIs ("Wireless Light Control" and "Phoscon") and over the REST API and Websockets, and optionally runs a VNC server for viewing and interacting with the ZigBee mesh through the deCONZ UI.&#xD;
 &#xD;
 You must use a custom ip - network type custom br:0 -</Overview>
   <Category>HomeAutomation:</Category>
   <WebUI>http://[IP]:[PORT:80]/</WebUI>
-  <TemplateURL/>
+  <TemplateURL>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/deconz.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/docker_icons/deconz.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1590595465</DateInstalled>
+  <DateInstalled>1590599772</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>This Docker image containerizes the deCONZ software from Dresden Elektronik, which controls a ZigBee network using a Conbee USB or RaspBee GPIO serial interface. This image runs deCONZ in "minimal" mode, for control of the ZigBee network via the WebUIs ("Wireless Light Control" and "Phoscon") and over the REST API and Websockets, and optionally runs a VNC server for viewing and interacting with the ZigBee mesh through the deCONZ UI.&#xD;
@@ -38,11 +38,6 @@ You must use a custom ip - network type custom br:0 -</Description>
   </Data>
   <Environment>
     <Variable>
-      <Value>/dev/ttyACM0</Value>
-      <Name> DECONZ_DEVICE</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
       <Value>Europe/London</Value>
       <Name>TZ</Name>
       <Mode/>
@@ -50,7 +45,5 @@ You must use a custom ip - network type custom br:0 -</Description>
   </Environment>
   <Labels/>
   <Config Name="appdata" Target="/root/.local/share/dresden-elektronik/deCONZ" Default="" Mode="rw" Description="Container Path: /root/.local/share/dresden-elektronik/deCONZ" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/deconz</Config>
-  <Config Name="usb conbee" Target="" Default="" Mode="" Description="usb conbee" Type="Device" Display="always" Required="false" Mask="false">/dev/ttyACM0</Config>
-  <Config Name="usb device name" Target=" DECONZ_DEVICE" Default="" Mode="" Description="set same as device" Type="Variable" Display="always" Required="false" Mask="false">/dev/ttyACM0</Config>
   <Config Name="Host Key 2" Target="TZ" Default="" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">Europe/London</Config>
 </Container>
