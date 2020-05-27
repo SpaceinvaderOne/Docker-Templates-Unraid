@@ -7,22 +7,22 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support/>
+  <Support>https://forums.unraid.net/topic/92947-support-spaceinvaderone-explainshell/</Support>
   <Project>https://github.com/idank/explainshell</Project>
-  <Overview>Not everyone, especially people new to Linux and Unraid, know what a command that they type in having reqad it onlineonline command will actually do.&#xD;
+  <Overview>Not everyone, especially people new to Linux and Unraid, know what a command that they type i will actually do.&#xD;
 Explainshell is here to help with that. Copy and paste a command into its searchbox then hit explain&#xD;
 It will breakdown and display what each part of a Linux command means and does. </Overview>
-  <Category>Tools:</Category>
+  <Category>Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:5000]/</WebUI>
-  <TemplateURL/>
+  <TemplateURL>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/explainshell.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/docker_icons/explainshell.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1590592656</DateInstalled>
+  <DateInstalled>1590600841</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Description>Not everyone, especially people new to Linux and Unraid, know what a command that they type in having reqad it onlineonline command will actually do.&#xD;
+  <Description>Not everyone, especially people new to Linux and Unraid, know what a command that they type i will actually do.&#xD;
 Explainshell is here to help with that. Copy and paste a command into its searchbox then hit explain&#xD;
 It will breakdown and display what each part of a Linux command means and does. </Description>
   <Networking>
