@@ -21,7 +21,7 @@ Advanced option clcik on show more settings</Overview>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1591135641</DateInstalled>
+  <DateInstalled>1591137813</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>This Docker image containerizes the deCONZ software from Dresden Elektronik, which controls a ZigBee network using a Conbee USB or RaspBee GPIO serial interface. This image runs deCONZ in "minimal" mode, for control of the ZigBee network via the WebUIs ("Wireless Light Control" and "Phoscon") and over the REST API and Websockets, and optionally runs a VNC server for viewing and interacting with the ZigBee mesh through the deCONZ UI.&#xD;
@@ -117,10 +117,10 @@ Advanced option clcik on show more settings</Description>
   <Config Name="vnc password" Target="DECONZ_VNC_PASSWORD" Default="" Mode="" Description="vnc password" Type="Variable" Display="always" Required="false" Mask="true"/>
   <Config Name="Web port" Target="DECONZ_WEB_PORT" Default="" Mode="" Description="not needed to be changed unless on 'host' network" Type="Variable" Display="advanced" Required="false" Mask="false">80</Config>
   <Config Name="websockets service" Target="DECONZ_WS_PORT" Default="" Mode="" Description="websockets service" Type="Variable" Display="advanced" Required="false" Mask="false">443</Config>
-  <Config Name="DEBUG INFO" Target="DEBUG_INFO" Default="" Mode="" Description="DEBUG_INFO" Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
-  <Config Name="DEBUG APS" Target="DEBUG_APS" Default="" Mode="" Description="DEBUG APS" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
-  <Config Name="DEBUG ZCL" Target="DEBUG_ZCL" Default="" Mode="" Description="DEBUG ZCL" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
-  <Config Name="DEBUG ZDP" Target="DEBUG_ZDP" Default="" Mode="" Description="DEBUG ZDP" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
-  <Config Name="DEBUG OTAU" Target="DEBUG_OTAU" Default="" Mode="" Description="DEBUG OTAU" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="DEBUG INFO" Target="DEBUG_INFO" Default="1" Mode="" Description="DEBUG_INFO" Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
+  <Config Name="DEBUG APS" Target="DEBUG_APS" Default="0" Mode="" Description="DEBUG APS" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="DEBUG ZCL" Target="DEBUG_ZCL" Default="0" Mode="" Description="DEBUG ZCL" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="DEBUG ZDP" Target="DEBUG_ZDP" Default=" 0" Mode="" Description="DEBUG ZDP" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="DEBUG OTAU" Target="DEBUG_OTAU" Default="0" Mode="" Description="DEBUG OTAU" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
   <Config Name="UPNP on off" Target="DECONZ_UPNP" Default="1|0" Mode="" Description="UPNP on 1 off 0" Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
 </Container>
