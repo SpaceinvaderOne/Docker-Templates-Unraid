@@ -11,20 +11,24 @@
   <Project>https://www.phoscon.de/en/conbee2/</Project>
   <Overview>This Docker image containerizes the deCONZ software from Dresden Elektronik, which controls a ZigBee network using a Conbee USB or RaspBee GPIO serial interface. This image runs deCONZ in "minimal" mode, for control of the ZigBee network via the WebUIs ("Wireless Light Control" and "Phoscon") and over the REST API and Websockets, and optionally runs a VNC server for viewing and interacting with the ZigBee mesh through the deCONZ UI.&#xD;
 &#xD;
-You must use a custom ip - network type custom br:0 -</Overview>
+You must use a custom ip - network type custom br:0 - (alternatively use host and change webport)&#xD;
+&#xD;
+Advanced option clcik on show more settings</Overview>
   <Category>HomeAutomation:</Category>
   <WebUI>http://[IP]:[PORT:80]/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/deconz.xml</TemplateURL>
+  <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/docker_icons/deconz.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1590599772</DateInstalled>
+  <DateInstalled>1591135641</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>This Docker image containerizes the deCONZ software from Dresden Elektronik, which controls a ZigBee network using a Conbee USB or RaspBee GPIO serial interface. This image runs deCONZ in "minimal" mode, for control of the ZigBee network via the WebUIs ("Wireless Light Control" and "Phoscon") and over the REST API and Websockets, and optionally runs a VNC server for viewing and interacting with the ZigBee mesh through the deCONZ UI.&#xD;
 &#xD;
-You must use a custom ip - network type custom br:0 -</Description>
+You must use a custom ip - network type custom br:0 - (alternatively use host and change webport)&#xD;
+&#xD;
+Advanced option clcik on show more settings</Description>
   <Networking>
     <Mode>br0</Mode>
     <Publish/>
@@ -38,12 +42,85 @@ You must use a custom ip - network type custom br:0 -</Description>
   </Data>
   <Environment>
     <Variable>
+      <Value>/dev/ttyACM0</Value>
+      <Name> DECONZ_DEVICE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
       <Value>Europe/London</Value>
       <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1</Value>
+      <Name>DECONZ_VNC_MODE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>5900</Value>
+      <Name>DECONZ_VNC_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>DECONZ_VNC_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>80</Value>
+      <Name>DECONZ_WEB_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>443</Value>
+      <Name>DECONZ_WS_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1</Value>
+      <Name>DEBUG_INFO</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>DEBUG_APS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>DEBUG_ZCL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>DEBUG_ZDP</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>DEBUG_OTAU</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1</Value>
+      <Name>DECONZ_UPNP</Name>
       <Mode/>
     </Variable>
   </Environment>
   <Labels/>
   <Config Name="appdata" Target="/root/.local/share/dresden-elektronik/deCONZ" Default="" Mode="rw" Description="Container Path: /root/.local/share/dresden-elektronik/deCONZ" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/deconz</Config>
-  <Config Name="Host Key 2" Target="TZ" Default="" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">Europe/London</Config>
+  <Config Name="usb conbee" Target="" Default="" Mode="" Description="usb conbee" Type="Device" Display="always" Required="false" Mask="false">/dev/ttyACM0</Config>
+  <Config Name="usb device name" Target=" DECONZ_DEVICE" Default="" Mode="" Description="set same as device" Type="Variable" Display="always" Required="false" Mask="false">/dev/ttyACM0</Config>
+  <Config Name="Time zoze" Target="TZ" Default="" Mode="" Description="Time zone" Type="Variable" Display="always" Required="false" Mask="false">Europe/London</Config>
+  <Config Name="VNC Mode" Target="DECONZ_VNC_MODE" Default="0|1" Mode="" Description="vnc mode  1 on  0 off" Type="Variable" Display="always" Required="false" Mask="false">1</Config>
+  <Config Name="VNC port no." Target="DECONZ_VNC_PORT" Default="" Mode="" Description="vnc port number" Type="Variable" Display="always" Required="false" Mask="false">5900</Config>
+  <Config Name="vnc password" Target="DECONZ_VNC_PASSWORD" Default="" Mode="" Description="vnc password" Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="Web port" Target="DECONZ_WEB_PORT" Default="" Mode="" Description="not needed to be changed unless on 'host' network" Type="Variable" Display="advanced" Required="false" Mask="false">80</Config>
+  <Config Name="websockets service" Target="DECONZ_WS_PORT" Default="" Mode="" Description="websockets service" Type="Variable" Display="advanced" Required="false" Mask="false">443</Config>
+  <Config Name="DEBUG INFO" Target="DEBUG_INFO" Default="" Mode="" Description="DEBUG_INFO" Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
+  <Config Name="DEBUG APS" Target="DEBUG_APS" Default="" Mode="" Description="DEBUG APS" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="DEBUG ZCL" Target="DEBUG_ZCL" Default="" Mode="" Description="DEBUG ZCL" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="DEBUG ZDP" Target="DEBUG_ZDP" Default="" Mode="" Description="DEBUG ZDP" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="DEBUG OTAU" Target="DEBUG_OTAU" Default="" Mode="" Description="DEBUG OTAU" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="UPNP on off" Target="DECONZ_UPNP" Default="1|0" Mode="" Description="UPNP on 1 off 0" Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
 </Container>
