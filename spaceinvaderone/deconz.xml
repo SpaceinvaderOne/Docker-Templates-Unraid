@@ -43,7 +43,7 @@ Advanced option clcik on show more settings</Description>
   <Environment>
     <Variable>
       <Value>/dev/ttyACM0</Value>
-      <Name> DECONZ_DEVICE</Name>
+      <Name>DECONZ_DEVICE</Name>
       <Mode/>
     </Variable>
     <Variable>
