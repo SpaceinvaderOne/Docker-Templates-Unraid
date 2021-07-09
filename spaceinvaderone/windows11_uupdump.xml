@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>windows11_uupdump</Name>
+  <Repository>spaceinvaderone/windows11_insider</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/SpaceinvaderOne/unraid_win11_insider</Project>
+  <Overview>A container to download the Window 11 insiders build and put it in the iso share to install as a vm&#xD;
+Container uses files from https://uupdump.net/ to easily download UUP files from  the Windows Update servers.&#xD;
+&#xD;
+The default setting in the container will download Windows 11.&#xD;
+However you can add a script file from https://uupdump.net/  for downloading other isos.&#xD;
+To do this download and unzip the download package and add the files to the custom folder in appdata&#xD;
+set the variable to custom.&#xD;
+&#xD;
+Set the name for the downloaded iso image in the isoname variable&#xD;
+&#xD;
+&#xD;
+This project is not affiliated with Microsoft Corporation. Windows is a registered trademark of Microsoft Corporation.</Overview>
+  <Category>Tools:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/unraid_vm_icons/master/icons/Windows/Windows_11.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1625862716</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>A container to download the Window 11 insiders build and put it in the iso share to install as a vm&#xD;
+Container uses files from https://uupdump.net/ to easily download UUP files from  the Windows Update servers.&#xD;
+&#xD;
+The default setting in the container will download Windows 11.&#xD;
+However you can add a script file from https://uupdump.net/  for downloading other isos.&#xD;
+To do this download and unzip the download package and add the files to the custom folder in appdata&#xD;
+set the variable to custom.&#xD;
+&#xD;
+Set the name for the downloaded iso image in the isoname variable&#xD;
+&#xD;
+&#xD;
+This project is not affiliated with Microsoft Corporation. Windows is a registered trademark of Microsoft Corporation.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/isos/Windows/</HostDir>
+      <ContainerDir>/isos</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/windows11_uupdump</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>default</Value>
+      <Name>version</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Window11_Insiders.iso</Value>
+      <Name>isoname</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>uup_download_linux.sh</Value>
+      <Name>name</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Isos path" Target="/isos" Default="" Mode="rw" Description="Path to where you store your iso images" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/isos/Windows/</Config>
+  <Config Name="Default or Custom" Target="version" Default="default|custom" Mode="" Description="Choose the default script or choose custom to add your own from uupdump.net (add name in name variable if you choose custom)" Type="Variable" Display="always" Required="false" Mask="false">default</Config>
+  <Config Name="Name for ISO image" Target="isoname" Default="Window11_Insiders" Mode="" Description="name for downloaded iso to be put in the iso share" Type="Variable" Display="always" Required="false" Mask="false">Window11_Insiders.iso</Config>
+  <Config Name="appdata" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/windows11_uupdump</Config>
+  <Config Name="Custom script name" Target="name" Default="uup_download_linux.sh" Mode="" Description="If using custom script in appdata/custom from uupdump.net you can specify the name here (you shouldnt need to change this)" Type="Variable" Display="advanced" Required="false" Mask="false">uup_download_linux.sh</Config>
+</Container>
