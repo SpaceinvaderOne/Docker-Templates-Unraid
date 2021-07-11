@@ -2,12 +2,12 @@
 <Container version="2">
   <Name>windows11_uupdump</Name>
   <Repository>spaceinvaderone/windows11_insider</Repository>
-  <Registry/>
+  <Registry>https://hub.docker.com/repository/docker/spaceinvaderone/windows11_insider</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support/>
+  <Support>https://forums.unraid.net/topic/111241-support-spaceinvaderone-windows11-uup-dump/</Support>
   <Project>https://github.com/SpaceinvaderOne/unraid_win11_insider</Project>
   <Overview>A container to download the Window 11 insiders build and put it in the iso share to install as a vm&#xD;
 Container uses files from https://uupdump.net/ to easily download UUP files from  the Windows Update servers.&#xD;
@@ -28,7 +28,7 @@ This project is not affiliated with Microsoft Corporation. Windows is a register
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1625862716</DateInstalled>
+  <DateInstalled>1625967643</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>A container to download the Window 11 insiders build and put it in the iso share to install as a vm&#xD;
@@ -66,7 +66,7 @@ This project is not affiliated with Microsoft Corporation. Windows is a register
       <Mode/>
     </Variable>
     <Variable>
-      <Value>Window11_Insiders.iso</Value>
+      <Value>Window11_Insiders2.iso</Value>
       <Name>isoname</Name>
       <Mode/>
     </Variable>
@@ -79,7 +79,7 @@ This project is not affiliated with Microsoft Corporation. Windows is a register
   <Labels/>
   <Config Name="Isos path" Target="/isos" Default="" Mode="rw" Description="Path to where you store your iso images" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/isos/Windows/</Config>
   <Config Name="Default or Custom" Target="version" Default="default|custom" Mode="" Description="Choose the default script or choose custom to add your own from uupdump.net (add name in name variable if you choose custom)" Type="Variable" Display="always" Required="false" Mask="false">default</Config>
-  <Config Name="Name for ISO image" Target="isoname" Default="Window11_Insiders" Mode="" Description="name for downloaded iso to be put in the iso share" Type="Variable" Display="always" Required="false" Mask="false">Window11_Insiders.iso</Config>
+  <Config Name="Name for ISO image" Target="isoname" Default="Window11_Insiders" Mode="" Description="name for downloaded iso to be put in the iso share" Type="Variable" Display="always" Required="false" Mask="false">Window11_Insiders2.iso</Config>
   <Config Name="appdata" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/windows11_uupdump</Config>
   <Config Name="Custom script name" Target="name" Default="uup_download_linux.sh" Mode="" Description="If using custom script in appdata/custom from uupdump.net you can specify the name here (you shouldnt need to change this)" Type="Variable" Display="advanced" Required="false" Mask="false">uup_download_linux.sh</Config>
 </Container>
