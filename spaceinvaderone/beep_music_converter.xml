@@ -11,8 +11,7 @@
   <Project>https://github.com/SpaceinvaderOne/Beep-Music-Converter</Project>
   <Overview>Unraid container to convert mp3 or wav to PC beep speaker music&#xD;
 &#xD;
-This is a container to be able to convert a wav or mp3 file into "beep code" so to be able to play it through a PC beep speaker. This can then be used to add to a user script&#xD;
-to do things like play a tune on server startup and shutdown. (nice for headless server to know when its up)&#xD;
+Convert a wav or mp3 file into "beep code" so to be able to play it through a PC beep speaker. This can then be used to add to a user script to do things like play a tune on server startup and shutdown. (nice for headless server to know when its up)&#xD;
 &#xD;
 You will need a beep speaker in your server for this to work. Dont worry they are very cheap! Under $5 on Amazon for two! https://amzn.to/3kwWvlN&#xD;
 &#xD;
@@ -34,13 +33,12 @@ For some already converted beep tunes see here https://github.com/SpaceinvaderOn
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1626614247</DateInstalled>
+  <DateInstalled>1626626707</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>Unraid container to convert mp3 or wav to PC beep speaker music&#xD;
 &#xD;
-This is a container to be able to convert a wav or mp3 file into "beep code" so to be able to play it through a PC beep speaker. This can then be used to add to a user script&#xD;
-to do things like play a tune on server startup and shutdown. (nice for headless server to know when its up)&#xD;
+Convert a wav or mp3 file into "beep code" so to be able to play it through a PC beep speaker. This can then be used to add to a user script to do things like play a tune on server startup and shutdown. (nice for headless server to know when its up)&#xD;
 &#xD;
 You will need a beep speaker in your server for this to work. Dont worry they are very cheap! Under $5 on Amazon for two! https://amzn.to/3kwWvlN&#xD;
 &#xD;
@@ -78,7 +76,7 @@ For some already converted beep tunes see here https://github.com/SpaceinvaderOn
       <Mode/>
     </Variable>
     <Variable>
-      <Value>50</Value>
+      <Value>98</Value>
       <Name>time</Name>
       <Mode/>
     </Variable>
@@ -86,7 +84,7 @@ For some already converted beep tunes see here https://github.com/SpaceinvaderOn
   <Labels/>
   <Config Name="custom" Target="custom" Default="default|Indiana_Jones|Monkey_Island" Mode="" Description="Default or choose other for an example to be converted" Type="Variable" Display="always" Required="false" Mask="false">default</Config>
   <Config Name="silent" Target="silent" Default="no|yes" Mode="" Description="Silent converts file without also playing through beep speaker. Default 'no'" Type="Variable" Display="always" Required="false" Mask="false">no</Config>
-  <Config Name="time" Target="time" Default="50" Mode="" Description="Time window for frequency analysis (in ms). Default 50 ms. Experiment with different values for individual tune to find best" Type="Variable" Display="always" Required="false" Mask="false">50</Config>
+  <Config Name="time" Target="time" Default="50" Mode="" Description="Time window for frequency analysis (in ms). Default 50 ms. Experiment with different values for individual tune to find best" Type="Variable" Display="always" Required="false" Mask="false">98</Config>
   <Config Name="beep" Target="" Default="" Mode="" Description="path to beep speaker (you must have a beep speaker for this container to work)" Type="Device" Display="advanced" Required="false" Mask="false">/dev/tty0</Config>
   <Config Name="appdata" Target="/config" Default="/mnt/user/appdata/Beep-Music-Converter" Mode="rw" Description="appdata" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/beep_music_converter</Config>
 </Container>
