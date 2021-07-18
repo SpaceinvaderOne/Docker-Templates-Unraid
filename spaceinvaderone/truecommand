@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>truecommand</Name>
+  <Repository>ixsystems/truecommand</Repository>
+  <Registry>https://hub.docker.com/r/ixsystems/truecommand/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/ixsystems/truecommand/</Support>
+  <Project/>
+  <Overview>TrueCommand is a &#x201C;single pane of glass&#x201D; application to simplify the scaling of data, drive management, and administration of all TrueNAS  (previously called FreeNAS) platforms.</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:91]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/unraid_vm_icons/master/icons/Freebsd/True_NAS.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1626611194</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>TrueCommand is a &#x201C;single pane of glass&#x201D; application to simplify the scaling of data, drive management, and administration of all TrueNAS  (previously called FreeNAS) platforms.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>91</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/truecommand</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="appdata" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/truecommand</Config>
+  <Config Name="web" Target="80" Default="" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">91</Config>
+</Container>
