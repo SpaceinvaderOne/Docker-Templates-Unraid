@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>log4jscan</Name>
+  <Repository>spaceinvaderone/log4j-scan:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/fullhunt/log4j-scan</Support>
+  <Project>https://github.com/fullhunt/log4j-scan</Project>
+  <Overview>A fully automated, accurate, and extensive scanner for finding vulnerable log4j hosts&#xD;
+&#xD;
+To Use&#xD;
+After install you will see this container in the docker tab but will apear as not started and seem not to start and the log will show an error.&#xD;
+You must add a url list before running to get a result.&#xD;
+The container will have made a folder in the appdata folder. You will need to reset its permissions run the line below from the Unraid terminal&#xD;
+   chmod -R u-x,go-rwx,go+u,ugo+X /mnt/user/appdata/log4j-scan/&#xD;
+then put a file called urls.txt with each url on a separate line in that location then run the below command&#xD;
+After run the container and view the log to see the result post arguments in the template&#xD;
+&#xD;
+&#xD;
+optional arguments can be added to the post arguements    (see https://github.com/fullhunt/log4j-scan)&#xD;
+  -h, --help            show this help message and exit&#xD;
+  -u URL, --url URL     Check a single URL.&#xD;
+  -p PROXY, --proxy PROXY&#xD;
+                        send requests through proxy&#xD;
+  -l USEDLIST, --list USEDLIST&#xD;
+                        Check a list of URLs.&#xD;
+  --request-type REQUEST_TYPE&#xD;
+                        Request Type: (get, post) - .&#xD;
+  --headers-file HEADERS_FILE&#xD;
+                        Headers fuzzing list - .&#xD;
+  --run-all-tests       Run all available tests on each URL.&#xD;
+  --exclude-user-agent-fuzzing&#xD;
+                        Exclude User-Agent header from fuzzing - useful to bypass weak checks on User-Agents.&#xD;
+  --wait-time WAIT_TIME&#xD;
+                        Wait time after all URLs are processed (in seconds) - .&#xD;
+  --waf-bypass          Extend scans with WAF bypass payloads.&#xD;
+  --custom-waf-bypass-payload CUSTOM_WAF_BYPASS_PAYLOAD&#xD;
+                        Test with custom WAF bypass payload.&#xD;
+  --test-CVE-2021-45046&#xD;
+                        Test using payloads for CVE-2021-45046 (detection payloads).&#xD;
+  --dns-callback-provider DNS_CALLBACK_PROVIDER&#xD;
+                        DNS Callback provider (Options: dnslog.cn, interact.sh) - .&#xD;
+  --custom-dns-callback-host CUSTOM_DNS_CALLBACK_HOST&#xD;
+                        Custom DNS Callback Host.&#xD;
+  --disable-http-redirects&#xD;
+                        Disable HTTP redirects. Note: HTTP redirects are useful as it allows the payloads to have a higher chance of reaching vulnerable systems.</Overview>
+  <Category>Security:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/e44f09d9bf826d47339f68a562794d37c1c5cee6/spaceinvaderone/docker_icons/log4jscan_icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs>  --run-all-tests -l /data/urls.txt</PostArgs>
+  <CPUset/>
+  <DateInstalled>1640905740</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Host Path 1" Target="/data" Default="" Mode="ro" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/log4j-scan</Config>
+</Container>
