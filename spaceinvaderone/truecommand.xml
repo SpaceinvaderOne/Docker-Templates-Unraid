@@ -11,7 +11,7 @@
   <Project/>
   <Overview>TrueCommand is a &#x201C;single pane of glass&#x201D; application to simplify the scaling of data, drive management, and administration of all TrueNAS  (previously called FreeNAS) platforms.</Overview>
   <Category/>
-  <WebUI>http://[IP]:[PORT:91]</WebUI>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/unraid_vm_icons/master/icons/Freebsd/True_NAS.png</Icon>
   <ExtraParams/>
