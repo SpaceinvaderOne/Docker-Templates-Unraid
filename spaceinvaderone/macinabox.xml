@@ -44,7 +44,7 @@ Inject fix xml userscript:    &#xD;
                 no     (default)  The fixxml script placed in appdata for you to copy later to userscripts&#xD;
                 yes   Macinabox will try to copy the script and inject directly into userscript plugin location  (userscript plugin must be installed)</Overview>
   <Category>Tools:</Category>
-  <WebUI>http://[IP]:[PORT:7800]</WebUI>
+  <WebUI>http://[IP]:[PORT:5800]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/macinabox.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/docker_icons/Macinabox.png</Icon>
   <ExtraParams/>
