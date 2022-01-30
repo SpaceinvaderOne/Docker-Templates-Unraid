@@ -6,101 +6,106 @@
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
-  <Privileged>true</Privileged>
+  <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/84601-support-spaceinvaderone-macinabox/</Support>
   <Project>https://github.com/SpaceinvaderOne/Macinabox</Project>
-  <Overview>This container can download and install a macOS VM. Either Big Sur, Catalina, Mojave or High Sierra. It will download the install media from Apple servers and convert it to a usable format for use for a VM.&#xD;
-It can autoinstall a  macOS VM. Also it can prepare all files ready for a manual install if you prefer&#xD;
+  <Overview>This container can download and install a macOS VM. Either Monterey, Big Sur, Catalina, Mojave or High Sierra. It will download the install media from Apple servers and convert it to a usable format for use for a VM.&#xD;
+It can fully autoinstall a macOS VM on the server. Also it can prepare all files ready for a manual install if you prefer&#xD;
 Tools are also provided to fix the xml when the custom xml has been stripped out of the VM after its been edited by the Unraid VM manager.&#xD;
+Also needed are&#xD;
+You need to have the "User Scripts" plugin installed from CA&#xD;
+Optional for the correct icons for macOS, please install  "vm_custom_icons" container from CA&#xD;
  &#xD;
-Usage&#xD;
-  Operating System Version  &#xD;
+#### Usage&#xD;
+## Operating System Version:  &#xD;
                 Choose version from below&#xD;
-                                Catalina  (default)&#xD;
-				Big Sur&#xD;
+				Big Sur (default)&#xD;
+				Monterey&#xD;
+				Catalina&#xD;
  				Mojave&#xD;
  				High Sierra&#xD;
-VM Images Location:      Location of your vm share ( default /mnt/user/domains/ )&#xD;
-Install Type 		&#xD;
-                Auto install &#xD;
- This will download MacOS and install needed files into your VM location.&#xD;
+				&#xD;
+## VM Images Location:      Location of your vm share ( default /mnt/user/domains/ )&#xD;
+&#xD;
+## Install Type: 		&#xD;
+                Auto install  # (This will download MacOS and install needed files into your VM location.)&#xD;
  &#xD;
-            	Manual- install&#xD;
- This will download MacOS and put all needed files into correct place ready for easy manual install. &#xD;
+            	Manual- install # (This will download MacOS and put all needed files into correct place ready for easy manual install.)&#xD;
  &#xD;
- Vdisksize     the size you want your vdisk to be created&#xD;
- &#xD;
- Run Mode.     &#xD;
-              macinabox_with_virtmanager   (run macinabox followed by virmanager)&#xD;
-	      virtmanager_only                       (run virmanger only -skips macinabox)&#xD;
-			  &#xD;
-Download Script:&#xD;
-               Method 1      Default&#xD;
-               Method 2      choose method 2 if first fails for some reason&#xD;
+## Vdisk size :   The size you want your vdisk to be created&#xD;
+&#xD;
+## Vdisk type:    Set vdisk type raw or qcow2&#xD;
+&#xD;
+## Opencore stock or custom:   Select the defualt Opencore in Macinabox or use one added in macinabox appdata in the folder custom_opencore&#xD;
+&#xD;
+## Delete and replace Opencore:  Select No or Yes to delete your vms opencore image and replace with fresh one.&#xD;
+&#xD;
+## Override defualt NIC type:  Default No -  Override the default nic type in the vm going to be installed.&#xD;
+&#xD;
+## VM Images Location:  You only need to change if your VM images are not in the default location /mnt/user/domains&#xD;
+&#xD;
+## VM Images Location AGAIN:  Only needs changing if you changed the above. Location must match the above.&#xD;
 				 &#xD;
-Isos Share Location     This is where macinabox will put install media and Opencore bootloader&#xD;
+## Isos Share Location:  This is where macinabox will put install media and Opencore bootloader&#xD;
+&#xD;
+## Isos Share Location: You only need to change if your ISO images are not in the default location /mnt/user/isos&#xD;
                   &#xD;
-Inject fix xml userscript:    &#xD;
-                no     (default)  The fixxml script placed in appdata for you to copy later to userscripts&#xD;
-                yes   Macinabox will try to copy the script and inject directly into userscript plugin location  (userscript plugin must be installed)</Overview>
-  <Category>Tools:</Category>
-  <WebUI>http://[IP]:[PORT:5800]</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/macinabox.xml</TemplateURL>
+## appdata location:     If you change this you will need to do the same in the macinabox help user script</Overview>
+  <Category>Tools: Other:</Category>
+  <WebUI/>
+  <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/docker_icons/Macinabox.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1607478105</DateInstalled>
-  <DonateText>If you like this then please consider buying me a beer!! :D</DonateText>
-  <DonateLink>https://www.paypal.me/spaceinvader</DonateLink>
-  <Description>This container can download and install a macOS VM. Either Big Sur, Catalina, Mojave or High Sierra. It will download the install media from Apple servers and convert it to a usable format for use for a VM.&#xD;
-It can autoinstall a  macOS VM. Also it can prepare all files ready for a manual install if you prefer&#xD;
+  <DateInstalled>1643571962</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>This container can download and install a macOS VM. Either Monterey, Big Sur, Catalina, Mojave or High Sierra. It will download the install media from Apple servers and convert it to a usable format for use for a VM.&#xD;
+It can fully autoinstall a macOS VM on the server. Also it can prepare all files ready for a manual install if you prefer&#xD;
 Tools are also provided to fix the xml when the custom xml has been stripped out of the VM after its been edited by the Unraid VM manager.&#xD;
+Also needed are&#xD;
+You need to have the "User Scripts" plugin installed from CA&#xD;
+Optional for the correct icons for macOS, please install  "vm_custom_icons" container from CA&#xD;
  &#xD;
-Usage&#xD;
-  Operating System Version  &#xD;
+#### Usage&#xD;
+## Operating System Version:  &#xD;
                 Choose version from below&#xD;
-                                Catalina  (default)&#xD;
-				Big Sur&#xD;
+				Big Sur (default)&#xD;
+				Monterey&#xD;
+				Catalina&#xD;
  				Mojave&#xD;
  				High Sierra&#xD;
-VM Images Location:      Location of your vm share ( default /mnt/user/domains/ )&#xD;
-Install Type 		&#xD;
-                Auto install &#xD;
- This will download MacOS and install needed files into your VM location.&#xD;
+				&#xD;
+## VM Images Location:      Location of your vm share ( default /mnt/user/domains/ )&#xD;
+&#xD;
+## Install Type: 		&#xD;
+                Auto install  # (This will download MacOS and install needed files into your VM location.)&#xD;
  &#xD;
-            	Manual- install&#xD;
- This will download MacOS and put all needed files into correct place ready for easy manual install. &#xD;
+            	Manual- install # (This will download MacOS and put all needed files into correct place ready for easy manual install.)&#xD;
  &#xD;
- Vdisksize     the size you want your vdisk to be created&#xD;
- &#xD;
- Run Mode.     &#xD;
-              macinabox_with_virtmanager   (run macinabox followed by virmanager)&#xD;
-	      virtmanager_only                       (run virmanger only -skips macinabox)&#xD;
-			  &#xD;
-Download Script:&#xD;
-               Method 1      Default&#xD;
-               Method 2      choose method 2 if first fails for some reason&#xD;
+## Vdisk size :   The size you want your vdisk to be created&#xD;
+&#xD;
+## Vdisk type:    Set vdisk type raw or qcow2&#xD;
+&#xD;
+## Opencore stock or custom:   Select the defualt Opencore in Macinabox or use one added in macinabox appdata in the folder custom_opencore&#xD;
+&#xD;
+## Delete and replace Opencore:  Select No or Yes to delete your vms opencore image and replace with fresh one.&#xD;
+&#xD;
+## Override defualt NIC type:  Default No -  Override the default nic type in the vm going to be installed.&#xD;
+&#xD;
+## VM Images Location:  You only need to change if your VM images are not in the default location /mnt/user/domains&#xD;
+&#xD;
+## VM Images Location AGAIN:  Only needs changing if you changed the above. Location must match the above.&#xD;
 				 &#xD;
-Isos Share Location     This is where macinabox will put install media and Opencore bootloader&#xD;
+## Isos Share Location:  This is where macinabox will put install media and Opencore bootloader&#xD;
+&#xD;
+## Isos Share Location: You only need to change if your ISO images are not in the default location /mnt/user/isos&#xD;
                   &#xD;
-Inject fix xml userscript:    &#xD;
-                no     (default)  The fixxml script placed in appdata for you to copy later to userscripts&#xD;
-                yes   Macinabox will try to copy the script and inject directly into userscript plugin location  (userscript plugin must be installed)</Description>
+## appdata location:     If you change this you will need to do the same in the macinabox help user script</Description>
   <Networking>
     <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort>7800</HostPort>
-        <ContainerPort>5800</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-      <Port>
-        <HostPort>7900</HostPort>
-        <ContainerPort>5900</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
+    <Publish/>
   </Networking>
   <Data>
     <Volume>
@@ -114,23 +119,13 @@ Inject fix xml userscript:    &#xD;
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/system/custom_ovmf/</HostDir>
-      <ContainerDir>/customovmf/</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
       <HostDir>/mnt/user/appdata/macinabox</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/macinabox/macinabox</HostDir>
-      <ContainerDir>/config2</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/mnt/user/appdata/macinabox/basesystem</HostDir>
-      <ContainerDir>/Macinabox/tools/FetchMacOS/BaseSystem</ContainerDir>
+      <HostDir>/mnt/user/system/custom_ovmf/</HostDir>
+      <ContainerDir>/customovmf/</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
@@ -138,15 +133,10 @@ Inject fix xml userscript:    &#xD;
       <ContainerDir>/userscripts</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
-    <Volume>
-      <HostDir>/dev/urandom</HostDir>
-      <ContainerDir>/dev/urandom</ContainerDir>
-      <Mode>ro</Mode>
-    </Volume>
   </Data>
   <Environment>
     <Variable>
-      <Value>Catalina</Value>
+      <Value>High Sierra</Value>
       <Name>flavour</Name>
       <Mode/>
     </Variable>
@@ -161,6 +151,26 @@ Inject fix xml userscript:    &#xD;
       <Mode/>
     </Variable>
     <Variable>
+      <Value>qcow2</Value>
+      <Name>vdisktype</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>stock</Value>
+      <Name>opencore</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>no</Value>
+      <Name>replaceopencore</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>no</Value>
+      <Name>overridenic</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
       <Value>/mnt/user/domains/</Value>
       <Name>VMIMAGES</Name>
       <Mode/>
@@ -171,74 +181,25 @@ Inject fix xml userscript:    &#xD;
       <Mode/>
     </Variable>
     <Variable>
-      <Value>method 1</Value>
-      <Name>method</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>macinabox_with_virtmanager</Value>
-      <Name>onlyvirt</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
       <Value>yes</Value>
       <Name>injectfixxml</Name>
       <Mode/>
     </Variable>
-    <Variable>
-      <Value>768</Value>
-      <Name>DISPLAY_HEIGHT</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>1280</Value>
-      <Name>DISPLAY_WIDTH</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>1</Value>
-      <Name>KEEP_APP_RUNNING</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>0</Value>
-      <Name>USER_ID</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>0</Value>
-      <Name>GROUP_ID</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>000</Value>
-      <Name>UMASK</Name>
-      <Mode/>
-    </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Operating System Version" Target="flavour" Default="Catalina|Big Sur|Mojave|High Sierra" Mode="" Description="Choose macOS version to install " Type="Variable" Display="always" Required="true" Mask="false">Catalina</Config>
+  <Config Name="Operating System Version" Target="flavour" Default="Big Sur|Monterey|Catalina|Mojave|High Sierra" Mode="" Description="Choose macOS version to install " Type="Variable" Display="always" Required="true" Mask="false">High Sierra</Config>
   <Config Name="Install Type" Target="vminstall" Default="Auto install|Manual install" Mode="" Description="Auto install to install a vm directly into Unraid. Manual for advanced install" Type="Variable" Display="always" Required="true" Mask="false">Auto install</Config>
   <Config Name="Vdisk Size" Target="vdisksize" Default="" Mode="" Description="Enter desired vdisk size (only used by auto install - ignored by manual install)" Type="Variable" Display="always" Required="true" Mask="false">100G</Config>
-  <Config Name="VM Images Location" Target="/domains" Default="/mnt/user/domains/" Mode="rw" Description="VM share. Used only by auto install to create vm xml" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/domains/</Config>
-  <Config Name="VM Images Location again" Target="VMIMAGES" Default="/mnt/user/domains/" Mode="" Description="This must match the above VM Images Location (yes we need it twice!)" Type="Variable" Display="always" Required="true" Mask="false">/mnt/user/domains/</Config>
-  <Config Name="Isos Share Location" Target="/isos" Default="/mnt/user/isos/" Mode="rw" Description="Your isos share path - macOS install and opencore bootloader will be put here. (used by auto and manual install)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/isos/</Config>
-  <Config Name="Isos Share Location again" Target="ISOIMAGES" Default="/mnt/user/isos/" Mode="" Description="This must match the above Isos Share Location (yes we need it twice!)" Type="Variable" Display="always" Required="true" Mask="false">/mnt/user/isos/</Config>
-  <Config Name="Download Method" Target="method" Default="method 1|method 2" Mode="" Description="2 different ways to get macos. Change to method 2 if method 1 doesnt work for you" Type="Variable" Display="always" Required="true" Mask="false">method 1</Config>
-  <Config Name="Run Mode" Target="onlyvirt" Default="macinabox_with_virtmanager|virtmanager_only" Mode="" Description="choose running mode" Type="Variable" Display="always" Required="true" Mask="false">macinabox_with_virtmanager</Config>
-  <Config Name="custom ovmf location" Target="/customovmf/" Default="/mnt/user/system/custom_ovmf/" Mode="rw" Description="dont change" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/system/custom_ovmf/</Config>
-  <Config Name="appdata" Target="/config" Default="/mnt/user/appdata/macinabox" Mode="rw" Description="If you change this location be sure to change Macinabox only data &amp;amp; Baseimage location too." Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/macinabox</Config>
-  <Config Name="Macinabox only data" Target="/config2" Default="/mnt/user/appdata/macinabox/macinabox" Mode="rw" Description="Macinabox data as a subfolder of the main appdata&#13;&#10;" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/macinabox/macinabox</Config>
-  <Config Name="Basesystem " Target="/Macinabox/tools/FetchMacOS/BaseSystem" Default="/mnt/user/appdata/macinabox/basesystem" Mode="rw" Description="Baseimage temporary location as a subfolder of appdata" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/macinabox/basesystem</Config>
-  <Config Name="Inject fix xml userscript" Target="injectfixxml" Default="yes|no" Mode="" Description="Injects macinabox helper userscript directly into userscripts plugin " Type="Variable" Display="advanced" Required="true" Mask="false">yes</Config>
-  <Config Name="Userscripts Location" Target="/userscripts" Default="/boot/config/plugins/user.scripts/scripts" Mode="rw" Description="dont change this!" Type="Path" Display="advanced" Required="true" Mask="false">/boot/config/plugins/user.scripts/scripts</Config>
-  <Config Name="Display Height" Target="DISPLAY_HEIGHT" Default="768" Mode="" Description="Height (in pixels) of the virtmager's window." Type="Variable" Display="advanced" Required="true" Mask="false">768</Config>
-  <Config Name="Display Width" Target="DISPLAY_WIDTH" Default="1280" Mode="" Description="Width (in pixels) of the virtmanager's window." Type="Variable" Display="advanced" Required="true" Mask="false">1280</Config>
-  <Config Name="webvnc" Target="5800" Default="5800" Mode="tcp" Description="Virtmanager webvnc port" Type="Port" Display="advanced" Required="true" Mask="false">7800</Config>
-  <Config Name="vnc" Target="5900" Default="5900" Mode="tcp" Description="Virtmanger vnc port (if you want to use external vnc viewer programme)" Type="Port" Display="advanced" Required="false" Mask="false">7900</Config>
-  <Config Name="KEEP_APP_RUNNING" Target="KEEP_APP_RUNNING" Default="" Mode="" Description="Dont change !!" Type="Variable" Display="advanced" Required="true" Mask="false">1</Config>
-  <Config Name="/dev/urandom" Target="/dev/urandom" Default="/dev/urandom" Mode="ro" Description="Dont change !!" Type="Path" Display="advanced" Required="true" Mask="false">/dev/urandom</Config>
-  <Config Name="USER_ID" Target="USER_ID" Default="99" Mode="" Description="USER_ID" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
-  <Config Name="GROUP_ID" Target="GROUP_ID" Default="0" Mode="" Description="GROUP_ID" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
-  <Config Name="UMASK" Target="UMASK" Default="000" Mode="" Description="UMASK" Type="Variable" Display="advanced" Required="false" Mask="false">000</Config>
+  <Config Name="Vdisk Type" Target="vdisktype" Default="raw|qcow2" Mode="" Description="Choose vdisk type  raw or qcow2  (qcow2 takes less space)" Type="Variable" Display="always" Required="true" Mask="false">qcow2</Config>
+  <Config Name="Opencore stock or custom" Target="opencore" Default="stock|custom" Mode="" Description="Choose from the built in Opencore in macinabox or choose a custom one (add in appdata/macinabox/custom_opencore)" Type="Variable" Display="always" Required="true" Mask="false">stock</Config>
+  <Config Name="Delete and replace Opencore" Target="replaceopencore" Default="no|yes" Mode="" Description="Set to " Type="Variable" Display="always" Required="true" Mask="false">no</Config>
+  <Config Name="Override defualt NIC type" Target="overridenic" Default="no|e1000-82545em|virtio|virtio-net|vmxnet3" Mode="" Description="Defualt is no&#13;&#10;Change to override the template defualt for the NIC" Type="Variable" Display="always" Required="true" Mask="false">no</Config>
+  <Config Name="VM Images Location" Target="/domains" Default="/mnt/user/domains/" Mode="rw" Description="Select where your vm images are stored on the server - defualt location is /mnt/user/domains/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/domains/</Config>
+  <Config Name="VM Images Location AGAIN !!!" Target="VMIMAGES" Default="/mnt/user/domains/" Mode="" Description="This must match the above VM Images Location (yes we need it twice!)" Type="Variable" Display="always" Required="true" Mask="false">/mnt/user/domains/</Config>
+  <Config Name="Isos Share Location" Target="/isos" Default="/mnt/user/isos/" Mode="rw" Description="Your isos share path - macOS install media will be put here.  defualt location is  /mnt/user/isos/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/isos/</Config>
+  <Config Name="Isos Share Location AGAIN !!!" Target="ISOIMAGES" Default="/mnt/user/isos/" Mode="" Description="This must match the above Isos Share Location (yes we need it twice!)" Type="Variable" Display="always" Required="true" Mask="false">/mnt/user/isos/</Config>
+  <Config Name="appdata" Target="/config" Default="/mnt/user/appdata/macinabox" Mode="rw" Description="Appdata location. If you change this you will need to do the same in the macinabox help user script" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/macinabox</Config>
+  <Config Name="custom ovmf location" Target="/customovmf/" Default="/mnt/user/system/custom_ovmf/" Mode="rw" Description="Dont change" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/system/custom_ovmf/</Config>
+  <Config Name="Inject Macinabox helper scripts" Target="injectfixxml" Default="yes|no" Mode="" Description="Injects macinabox helper userscript directly into userscripts plugin " Type="Variable" Display="advanced" Required="true" Mask="false">yes</Config>
+  <Config Name="Userscripts Location" Target="/userscripts" Default="/boot/config/plugins/user.scripts/scripts" Mode="rw" Description="Dont change this!" Type="Path" Display="advanced" Required="true" Mask="false">/boot/config/plugins/user.scripts/scripts</Config>
 </Container>
