@@ -58,7 +58,7 @@ Optional for the correct icons for macOS, please install  "vm_custom_icons" cont
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1643571962</DateInstalled>
+  <DateInstalled>1643573179</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>This container can download and install a macOS VM. Either Monterey, Big Sur, Catalina, Mojave or High Sierra. It will download the install media from Apple servers and convert it to a usable format for use for a VM.&#xD;
@@ -136,7 +136,7 @@ Optional for the correct icons for macOS, please install  "vm_custom_icons" cont
   </Data>
   <Environment>
     <Variable>
-      <Value>High Sierra</Value>
+      <Value>Big Sur</Value>
       <Name>flavour</Name>
       <Mode/>
     </Variable>
@@ -187,7 +187,7 @@ Optional for the correct icons for macOS, please install  "vm_custom_icons" cont
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Operating System Version" Target="flavour" Default="Big Sur|Monterey|Catalina|Mojave|High Sierra" Mode="" Description="Choose macOS version to install " Type="Variable" Display="always" Required="true" Mask="false">High Sierra</Config>
+  <Config Name="Operating System Version" Target="flavour" Default="Big Sur|Monterey|Catalina|Mojave|High Sierra" Mode="" Description="Choose macOS version to install " Type="Variable" Display="always" Required="true" Mask="false">Big Sur</Config>
   <Config Name="Install Type" Target="vminstall" Default="Auto install|Manual install" Mode="" Description="Auto install to install a vm directly into Unraid. Manual for advanced install" Type="Variable" Display="always" Required="true" Mask="false">Auto install</Config>
   <Config Name="Vdisk Size" Target="vdisksize" Default="" Mode="" Description="Enter desired vdisk size (only used by auto install - ignored by manual install)" Type="Variable" Display="always" Required="true" Mask="false">100G</Config>
   <Config Name="Vdisk Type" Target="vdisktype" Default="raw|qcow2" Mode="" Description="Choose vdisk type  raw or qcow2  (qcow2 takes less space)" Type="Variable" Display="always" Required="true" Mask="false">qcow2</Config>
