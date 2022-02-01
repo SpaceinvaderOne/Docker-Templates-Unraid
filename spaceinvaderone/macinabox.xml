@@ -6,12 +6,10 @@
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
-  <Privileged>false</Privileged>
+  <Privileged>true</Privileged>
   <Support>https://forums.unraid.net/topic/84601-support-spaceinvaderone-macinabox/</Support>
   <Project>https://github.com/SpaceinvaderOne/Macinabox</Project>
   <Overview>Downloads and installs a macOS VM. Either Monterey, Big Sur, Catalina, Mojave or High Sierra. It will download the install media from Apple servers and convert it to a usable format for use for a VM. It can fully autoinstall a macOS VM on the server. Also it can prepare all files ready for a manual install if you prefer. Tools are also provided to fix the xml when the custom xml has been stripped out of the VM after its been edited by the Unraid VM manager.&#xD;
-*Also needed are&#xD;
- "User Scripts" plugin and (0ptional for the correct icons for macOS) "vm_custom_icons" container from CA* installed from CA &#xD;
 ## Usage&#xD;
  **Operating System Version:**   Choose version from below&#xD;
 &#xD;
@@ -54,11 +52,12 @@
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1643703625</DateInstalled>
+  <DateInstalled>1643743011</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Requires>Usercripts plugin&#xD;
-</Requires>
+  <Requires> Usercripts plugin&#xD;
+ vm_custom_icons (0ptional for the correct icons for macOS)&#xD;
+&amp;lt;br&amp;gt;</Requires>
   <Config Name="Operating System Version" Target="flavour" Default="Big Sur|Monterey|Catalina|Mojave|High Sierra" Mode="" Description="Choose macOS version to install " Type="Variable" Display="always" Required="true" Mask="false">Big Sur</Config>
   <Config Name="Install Type" Target="vminstall" Default="Auto install|Manual install" Mode="" Description="Auto install to install a vm directly into Unraid. Manual for advanced install" Type="Variable" Display="always" Required="true" Mask="false">Auto install</Config>
   <Config Name="Vdisk Size" Target="vdisksize" Default="" Mode="" Description="Enter desired vdisk size (only used by auto install - ignored by manual install)" Type="Variable" Display="always" Required="true" Mask="false">100G</Config>
