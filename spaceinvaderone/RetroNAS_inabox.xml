@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>RetroNAS_inabox</Name>
+  <Repository>spaceinvaderone/retronas_inabox:latest</Repository>
+  <Registry>https://github.com/SpaceinvaderOne/RetroNASinabox</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>true</Privileged>
+  <Support>https://github.com/SpaceinvaderOne/RetroNASinabox</Support>
+  <Project>https://github.com/danmons/retronas</Project>
+  <Overview>This container will fully install a RetroNAS VM into the VMs tab of your server.&#xD;
+It downloads an a vDisk image and verifies it with a checksum before creating a vm template and installing the VM for you.&#xD;
+What you choose in the container varaibles will reflect to the vm. Fof most people these dont need to be changed from the defaults.&#xD;
+If you need to change the locations in the container this is what each will do&#xD;
+&#xD;
+VM Share on Server:   This should be set to you VM share - default on Unraid is /mnt/user/domains - the vm will be installed here&#xD;
+&#xD;
+RetroNAS data share   This should point to a share you want RetronNAS to use. All your roms etc will be here. Best have an empty share and move what you need there later.&#xD;
+default is retronas. The container will connect the VM using virtiofs to this share. So the share doent have to be "exported" by Unraid for retroNAS to use it (more secure)&#xD;
+&#xD;
+Name to call VM:   Easy -- The name you want the VM to be called  default id RetroNAS but you can change it&#xD;
+&#xD;
+The container then will do the rest. It will create an xml file for the vm based on the above and install the vm straight into the server. So once run goto the VMs tab and you will see it there. Start it up and confiure retronas in vnc window and configure (see my video how)  default username and password is retronas  (yes you can change them later! ) After logging in type retronas to configure your RetroNAS server. Have fun :)&#xD;
+&#xD;
+The container doesnt need to be kept running. It is just an install tool. The container has no webUI so to see what its doing view the container log. &#xD;
+&#xD;
+&#xD;
+</Overview>
+  <Category>GameServers: Tools:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://github.com/SpaceinvaderOne/RetroNASinabox/raw/main/RetroNAS_Icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1677348186</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="VM Share on Server" Target="/retronas_vm_location" Default="/mnt/user/domains/" Mode="rw" Description="This should be the share in which you store your VM images. Default is /mnt/user/domains" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/domains/</Config>
+  <Config Name="RetroNAS data share" Target="/retronas_virtiofs_location" Default="/mnt/user/retronas/" Mode="rw" Description="The share that you have created to store all RetroNAS roms etc Default /mnt/user/retronas" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/retronas/</Config>
+  <Config Name="Name to call VM" Target="vm_name" Default="RetroNAS" Mode="" Description="Your VM will be created with this name. Default is RetroNAS" Type="Variable" Display="always" Required="true" Mask="false">RetroNAS</Config>
+  <Config Name="access libvirt daemon" Target="/var/run/libvirt" Default="/var/run/libvirt" Mode="rw" Description="to access the libvirt daemon running on the host" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/libvirt</Config>
+  <Config Name="container" Target="container" Default="" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">yes</Config>
+  <Config Name="temp" Target="/tmp" Default="/tmp" Mode="rw" Description="only used for xml so vm can be defined" Type="Path" Display="advanced-hide" Required="true" Mask="false">/tmp</Config>
+  <Config Name="Location on Unraid which stores vm icons" Target="/unraid_vm_icons" Default="/usr/local/emhttp/plugins/dynamix.vm.manager/templates/images/" Mode="rw" Description="dont change" Type="Path" Display="advanced-hide" Required="true" Mask="false">/usr/local/emhttp/plugins/dynamix.vm.manager/templates/images/</Config>
+</Container>
