@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Win98_inabox</Name>
+  <Repository>spaceinvaderone/win98_inabox:latest</Repository>
+  <Registry>https://github.com/SpaceinvaderOne/Win98_inabox</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>true</Privileged>
+  <Support>https://github.com/SpaceinvaderOne/Win98_inabox</Support>
+  <Project/>
+  <Overview>This container will install a fully updated Windows 98SE virtual machine (VM) into the VMs tab of your server. The container variables that you select will apply to the VM, and for most users, the default settings are sufficient and do not require modification. However, if you need to change the locations within the container, here is a brief explanation of what each location does.&#xD;
+&#xD;
+The "VM Share on Server" setting should be configured to reflect the location of your VM share. By default, the VM share on Unraid is located at /mnt/user/domains. &#xD;
+&#xD;
+The "Name to call VM" setting is straightforward. It allows you to choose a custom name for your vm. The default name is "Windows 98" but you have the option to change it to any desired name.&#xD;
+&#xD;
+Windows 98 type    WIN98-KernelEX  This allows Win98 to run some Win2000 and XP software      WIN98-Normal  Normal vanilla install&#xD;
+&#xD;
+After configuring the container variables as described above, the container will take care of the rest. It will create an XML file for the Win 98 virtual machine based on your selections and install the VM directly onto the server. Once the container has been run, you can go to the VMs tab and locate the installed VM.&#xD;
+&#xD;
+It is important to note that the container does not need to be kept running after installation. It is simply a tool for installation purposes and does not have a web user interface (UI). To monitor the container's progress, you can view the container log.&#xD;
+** This container cant translate the location of an unassigned disk across to the vm template. So all locations choosen must be on the array or pool device.</Overview>
+  <Category>Tools: Other:</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/RetroNAS_inabox.xml</TemplateURL>
+  <Icon>https://github.com/SpaceinvaderOne/unraid_vm_icons/raw/master/icons/Windows/Windows_98.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1678233822</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="VM Share on Server" Target="/vm_location" Default="/mnt/user/domains/" Mode="rw" Description="This should be the share in which you store your VM images. Default is /mnt/user/domains" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/domains/</Config>
+  <Config Name="Name to call VM" Target="vm_name" Default="RetroNAS" Mode="" Description="Your VM will be created with this name. Default is RetroNAS" Type="Variable" Display="always" Required="true" Mask="false">Windows 98</Config>
+  <Config Name="Windows 98 type" Target="TYPE" Default="WIN98-KernelEX|WIN98-Normal" Mode="" Description="WIN98-KernelEX - Installs Windows 98 with Kernel Extensions and updates .........&#13;&#10;WIN98-Normal - Installs Windows 98 Vanilla with updates" Type="Variable" Display="always" Required="true" Mask="false">WIN98-KernelEX</Config>
+  <Config Name="What to do if VM exists" Target="RUNTYPE" Default="Fix-xml|Backup-then-Install" Mode="" Description="Fix-xml -- fixes custom xml for vm .......&#13;&#10;Backup-then-install -- Backs up vdisks and makes new vm" Type="Variable" Display="always" Required="true" Mask="false">Fix-xml</Config>
+  <Config Name="Start VM after creation" Target="START_VM" Default="Yes|No" Mode="" Description="Yes -- Starts the Windows98 VM after creation .......&#13;&#10;No  -- VM does not autostart" Type="Variable" Display="always" Required="false" Mask="false">Yes</Config>
+  <Config Name="access libvirt daemon" Target="/var/run/libvirt" Default="/var/run/libvirt" Mode="rw" Description="to access the libvirt daemon running on the host" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/libvirt</Config>
+  <Config Name="temp" Target="/tmp" Default="/tmp" Mode="rw" Description="only used for xml so vm can be defined" Type="Path" Display="advanced-hide" Required="true" Mask="false">/tmp</Config>
+  <Config Name="Location on Unraid which stores vm icons" Target="/unraid_vm_icons" Default="/usr/local/emhttp/plugins/dynamix.vm.manager/templates/images/" Mode="rw" Description="dont change" Type="Path" Display="advanced-hide" Required="true" Mask="false">/usr/local/emhttp/plugins/dynamix.vm.manager/templates/images/</Config>
+</Container>
