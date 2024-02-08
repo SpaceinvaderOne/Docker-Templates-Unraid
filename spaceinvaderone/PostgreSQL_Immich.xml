@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>PostgreSQL_Immich</Name>
-  <Repository>tensorchord/pgvecto-rs:pg16-v0.1.12</Repository>
+  <Repository>tensorchord/pgvecto-rs:pg16-v0.1.11</Repository>
   <Registry>https://registry.hub.docker.com/_/postgres/</Registry>
   <Network>bridge</Network>
   <MyIP/>
@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support/>
   <Project>https://www.postgresql.org/</Project>
-  <Overview>This container (based on PostgreSQL 16)  is specifically configured for seamless integration with the Immich container, which requires PostgreSQL equipped with pgvecto a robust Postgres extension enabling vector similarity search functions. The specific version used is tensorchord/pgvecto-rs:pg16 **&#xD;
+  <Overview>This container (based on PostgreSQL 16)  is specifically configured for seamless integration with the Immich container, which requires PostgreSQL equipped with pgvecto a robust Postgres extension enabling vector similarity search functions. The specific version used is tensorchord/pgvecto-rs:pg16-v0.1.11&#xD;
 &#xD;
 Configuration Parameters&#xD;
 &#xD;
