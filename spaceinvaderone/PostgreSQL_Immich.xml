@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>PostgreSQL_Immich</Name>
+  <Repository>tensorchord/pgvecto-rs:pg16-v0.1.12</Repository>
+  <Registry>https://registry.hub.docker.com/_/postgres/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://www.postgresql.org/</Project>
+  <Overview>This container (based on PostgreSQL 16)  is specifically configured for seamless integration with the Immich container, which requires PostgreSQL equipped with pgvecto a robust Postgres extension enabling vector similarity search functions. The specific version used is tensorchord/pgvecto-rs:pg16 **&#xD;
+&#xD;
+Configuration Parameters&#xD;
+&#xD;
+    POSTGRES_PASSWORD - Superuser password.&#xD;
+        Default postgres&#xD;
+        Note -- If you change this value, remember to update it in the Immitch container configuration as well.&#xD;
+&#xD;
+    POSTGRES_USER - Username for the superuser.&#xD;
+        Default postgres&#xD;
+        Note -- Alterations to this setting should also be mirrored in the Immitch container.&#xD;
+&#xD;
+    POSTGRES_DB - Default database.&#xD;
+        Default: postgres&#xD;
+        Note -- Any change here should be replicated in the Immitch container configuration.&#xD;
+&#xD;
+Storage&#xD;
+&#xD;
+    Data and Configuration Path: /mnt/user/appdata/postgresql_immitch&#xD;
+        This is the directory where Postgres stores its application data and configuration files.&#xD;
+&#xD;
+Network&#xD;
+&#xD;
+    Port 5433&#xD;
+        This port is mapped from the default PostgreSQL port 5432 to avoid conflicts if another PostgreSQL container is using the default port.&#xD;
+</Overview>
+  <Category>Network:Management Productivity: Tools:Utilities</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/juusujanar/unraid-templates/master/PostgreSQL15.xml</TemplateURL>
+  <Icon>https://github.com/SpaceinvaderOne/Docker-Templates-Unraid/blob/master/spaceinvaderone/docker_icons/postgresql-immich-logo.png?raw=true</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1707391335</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>The Immitch container and Redis container</Requires>
+  <Config Name="POSTGRES_PASSWORD" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Initial superuser password (required)" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
+  <Config Name="POSTGRES_USER" Target="POSTGRES_USER" Default="" Mode="" Description="Initial superuser name (default: postgres)" Type="Variable" Display="always" Required="false" Mask="false">postgres</Config>
+  <Config Name="POSTGRES_DB" Target="POSTGRES_DB" Default="" Mode="" Description="Initial database name (default: postgres)" Type="Variable" Display="always" Required="false" Mask="false">immich</Config>
+  <Config Name="Database Storage Path (Appdata)" Target="/var/lib/postgresql/data" Default="/mnt/user/appdata/postgresql_immitch" Mode="rw" Description="PostgreSQL data storage location" Type="Path" Display="always" Required="true" Mask="null">/mnt/user/appdata/PostgreSQL_Immich</Config>
+  <Config Name="PostgreSQL access port" Target="5432" Default="5432" Mode="tcp" Description="PostgreSQL TCP connection port mapped to 5433 from 5432 in case of other postgres container present" Type="Port" Display="always-hide" Required="true" Mask="null">5433</Config>
+</Container>
