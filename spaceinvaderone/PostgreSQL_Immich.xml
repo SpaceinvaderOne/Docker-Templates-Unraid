@@ -49,6 +49,6 @@ Network&#xD;
   <Config Name="POSTGRES_PASSWORD" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Initial superuser password (required)" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
   <Config Name="POSTGRES_USER" Target="POSTGRES_USER" Default="" Mode="" Description="Initial superuser name (default: postgres)" Type="Variable" Display="always" Required="false" Mask="false">postgres</Config>
   <Config Name="POSTGRES_DB" Target="POSTGRES_DB" Default="" Mode="" Description="Initial database name (default: postgres)" Type="Variable" Display="always" Required="false" Mask="false">immich</Config>
-  <Config Name="Database Storage Path (Appdata)" Target="/var/lib/postgresql/data" Default="/mnt/user/appdata/postgresql_immitch" Mode="rw" Description="PostgreSQL data storage location" Type="Path" Display="always" Required="true" Mask="null">/mnt/user/appdata/PostgreSQL_Immich</Config>
+  <Config Name="Database Storage Path (Appdata)" Target="/var/lib/postgresql/data" Default="/mnt/user/appdata/postgresql_immich" Mode="rw" Description="PostgreSQL data storage location" Type="Path" Display="always" Required="true" Mask="null">/mnt/user/appdata/PostgreSQL_Immich</Config>
   <Config Name="PostgreSQL access port" Target="5432" Default="5432" Mode="tcp" Description="PostgreSQL TCP connection port mapped to 5433 from 5432 in case of other postgres container present" Type="Port" Display="always-hide" Required="true" Mask="null">5433</Config>
 </Container>
