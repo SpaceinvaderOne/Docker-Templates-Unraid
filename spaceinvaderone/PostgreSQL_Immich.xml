@@ -45,7 +45,7 @@ Network&#xD;
   <DateInstalled>1707391335</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Requires>The Immitch container and Redis container</Requires>
+  <Requires>The Immich container and Redis container (or Redis can be enabled with docker mods in Immich container instead of separate Redis)</Requires>
   <Config Name="POSTGRES_PASSWORD" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Initial superuser password (required)" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
   <Config Name="POSTGRES_USER" Target="POSTGRES_USER" Default="" Mode="" Description="Initial superuser name (default: postgres)" Type="Variable" Display="always" Required="false" Mask="false">postgres</Config>
   <Config Name="POSTGRES_DB" Target="POSTGRES_DB" Default="" Mode="" Description="Initial database name (default: postgres)" Type="Variable" Display="always" Required="false" Mask="false">immich</Config>
