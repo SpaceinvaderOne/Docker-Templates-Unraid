@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>AutoSlackPack</Name>
+  <Repository>spaceinvaderone/auto_slack_pack:latest</Repository>
+  <Registry>https://github.com/SpaceinvaderOne/AutoSlackPack</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/SpaceinvaderOne/AutoSlackPack</Support>
+  <Project>https://github.com/SpaceinvaderOne/AutoSlackPack</Project>
+  <Overview>This provides a comprehensive Slackware-based environment with all the necessary build tools and dependencies pre-installed. It is designed for use to build Slackware packages from source on Unraid (Unraid is based off Slackware), which lacks the required build tools and libraries.&#xD;
+&#xD;
+In auto mode, it uses SlackBuild scripts from slackbuilds.org to automate the process of downloading, extracting, and building packages from source. Users can specify the SlackBuild and source URLs to automate the build process.&#xD;
+&#xD;
+In manual mode, the container can be used to perform custom builds. (Enter the docker console)&#xD;
+Usage&#xD;
+&#xD;
+To use this container, fill out the following variables in the Unraid Docker template:&#xD;
+&#xD;
+    AUTOBUILD: Controls whether the container automatically starts the build process.&#xD;
+        Set to "yes" to automatically start building the package using the provided SlackBuild and source download URLs.&#xD;
+        Set to "no" to skip the automatic build process. The container will remain running, allowing manual interaction.&#xD;
+&#xD;
+    SLACKBUILD_DOWNLOAD: URL to the SlackBuild script tarball. SlackBuilds can be found at slackbuilds.org, where links to the source code are also provided.&#xD;
+        Example: "http://slackbuilds.org/slackbuilds/15.0/system/mbuffer.tar.gz"&#xD;
+&#xD;
+    SOURCE_DOWNLOAD: URL to the source code tarball.&#xD;
+        Example: "http://www.maier-komor.de/software/mbuffer/mbuffer-20240107.tgz"&#xD;
+&#xD;
+You will find the built package in the appdata share here   -- /mnt/user/appdata/AutoSlackPack/out&#xD;
+&#xD;
+If you prefer to manually build the package, set AUTOBUILD to "no" and manually download (above variables are ignored) and build the package after accessing the container.</Overview>
+  <Category>Tools:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://github.com/SpaceinvaderOne/Docker-Templates-Unraid/blob/master/spaceinvaderone/docker_icons/AutoSlackPack.png?raw=true</Icon>
+  <ExtraParams>--dns 208.67.222.222 --dns 208.67.220.220</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1715783082</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Build in location:" Target="/app" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/AutoSlackPack/in</Config>
+  <Config Name="Package out location:" Target="/tmp" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/AutoSlackPack/out</Config>
+  <Config Name="Autobuild package" Target="AUTOBUILD" Default="yes|no" Mode="" Description="Select yes to autobuild the package then exit | &#13;&#10;Select no to manually build - container doesnt exit" Type="Variable" Display="always" Required="true" Mask="false">yes</Config>
+  <Config Name="Download SlackBuild URL" Target="SLACKBUILD_DOWNLOAD" Default="" Mode="" Description="Put here the url of the slackbuild script to use for building the package (get from http://slackbuilds.org/ )" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Download Source URL" Target="SOURCE_DOWNLOAD" Default="" Mode="" Description="Put here the url of the source to use for building the package (get from http://slackbuilds.org/ )" Type="Variable" Display="always" Required="false" Mask="false"/>
+</Container>
