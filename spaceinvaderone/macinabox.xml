@@ -2,7 +2,7 @@
 <Container version="2">
   <Name>macinabox</Name>
   <Repository>spaceinvaderone/macinabox</Repository>
-  <Registry>https://hub.docker.com/r/spaceinvaderone/macinabox</Registry>
+  <Registry>https://hub.docker.com/r/spaceinvaderone/macinabox:latest</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
