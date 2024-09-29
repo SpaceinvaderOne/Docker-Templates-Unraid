@@ -45,7 +45,7 @@ Port used by the container to access the Home Assistant WebUI --Default: `8123`&
   <DateInstalled>1727570703</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Requires>On your server make sure to have notifications enabled and docker update notifications enabled. This will allow the container to send notifications as macinabox runs.</Requires>
+  <Requires>On your server make sure to have the VM service enabled. Optional have notifications enabled for HomeAssistant_inabox to send GUI messages during install.</Requires>
   <Config Name="VM Name" Target="VMNAME" Default="" Mode="" Description="Enter a different name if you want the VM to have a name other than the OS name. If left blank, the container will use the default OS name installed." Type="Variable" Display="always" Required="false" Mask="false">Home Assistant</Config>
   <Config Name="Home Assistant URL" Target="CHECKURL" Default="https://www.home-assistant.io/installation/linux" Mode="" Description="page to scrape for download link" Type="Variable" Display="always" Required="true" Mask="false">https://www.home-assistant.io/installation/linux</Config>
   <Config Name="VM Images Location" Target="/domains" Default="/mnt/user/domains/" Mode="rw" Description="Please choose the storage location for your VM images on the server. The default path is set to /mnt/user/domains/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/domains/</Config>
