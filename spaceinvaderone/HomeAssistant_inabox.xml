@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>HomeAssistant_inabox</Name>
+  <Repository>spaceinvaderone/ha_inabox:latest</Repository>
+  <Registry>https://hub.docker.com/repository/docker/spaceinvaderone/ha_inabox/general</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support>https://forums.unraid.net/topic/176028-support-homeassistant_inabox/</Support>
+  <Project>https://github.com/SpaceinvaderOne/Home_Assistant_inabox</Project>
+  <Overview>HomeAssistant_inabox downloads, installs, and automatically manages a Home Assistant VM on your Unraid server with a single click. If the VM is found to be unexpectedly stopped, the container will automatically restart it to ensure uninterrupted service. Once installed, clicking on this container's WebUI will redirect you directly to your Home Assistant VM's WebUI.&#xD;
+&#xD;
+### Container Variables&#xD;
+**VM Name**  &#xD;
+Specify the desired name for the Home Assistant VM.  --Default `Home Assistant`&#xD;
+&#xD;
+ **VM Images Location**  &#xD;
+Set the path to where your VM images are stored &#xD;
+&#xD;
+**Appdata Location**  &#xD;
+Set the directory where HomeAssistant_inabox will store its appdata.&#xD;
+&#xD;
+**Keep VM Running**  &#xD;
+Choose `Yes` to automatically monitor if the Home Assistant VM is running. If it is found to be stopped, the container will attempt to restart the VM --Default `Yes`&#xD;
+&#xD;
+**Check Time**  &#xD;
+Specify how frequently (in minutes) to check if the Home Assistant VM is running.  &#xD;
+**Default**: `15` minutes&#xD;
+&#xD;
+**HA_inabox WebUI Port**  &#xD;
+Port used by the container to access the Home Assistant WebUI --Default: `8123`&#xD;
+&#xD;
+**Notes**&#xD;
+- During the VM installation, the container dynamically builds the XML template based on the current configuration.&#xD;
+- It automatically detects the highest available QEMU machine type on the server and adjusts the VM template to use the optimal configuration.&#xD;
+- For smooth operation, ensure that the VM storage and appdata paths are correctly set according to your Unraid shares.</Overview>
+  <Category>Tools: Other:</Category>
+  <WebUI>http://[IP]:[PORT:8123]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/macinabox.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/docker_icons/HomeAssistant.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1727570703</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>On your server make sure to have notifications enabled and docker update notifications enabled. This will allow the container to send notifications as macinabox runs.</Requires>
+  <Config Name="VM Name" Target="VMNAME" Default="" Mode="" Description="Enter a different name if you want the VM to have a name other than the OS name. If left blank, the container will use the default OS name installed." Type="Variable" Display="always" Required="false" Mask="false">Home Assistant</Config>
+  <Config Name="Home Assistant URL" Target="CHECKURL" Default="https://www.home-assistant.io/installation/linux" Mode="" Description="page to scrape for download link" Type="Variable" Display="always" Required="true" Mask="false">https://www.home-assistant.io/installation/linux</Config>
+  <Config Name="VM Images Location" Target="/domains" Default="/mnt/user/domains/" Mode="rw" Description="Please choose the storage location for your VM images on the server. The default path is set to /mnt/user/domains/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/domains/</Config>
+  <Config Name="Appdata Location:" Target="/config" Default="/mnt/user/appdata/macinabox-1" Mode="rw" Description="Please choose the storage location for your appdata  The default path is set to /mnt/user/appdata/macinabox/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/HomeAssistant_inabox</Config>
+  <Config Name="Keep Vm Running" Target="RESTART" Default="Yes|No" Mode="" Description="If Vm should stop container will restart it. Ensures Home Assistant will keep running should VM stop" Type="Variable" Display="always" Required="false" Mask="false">Yes</Config>
+  <Config Name="Check Time" Target="CHECK" Default="15" Mode="" Description="Check if VM is running (default every 15 mins)" Type="Variable" Display="always" Required="false" Mask="false">2</Config>
+  <Config Name="HA_inabox WebUI Port" Target="8123" Default="8123" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8123</Config>
+  <Config Name="unraid_vm_icons" Target="/icons" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="false" Mask="false">/usr/local/emhttp/plugins/dynamix.vm.manager/templates/images</Config>
+  <Config Name="UNRAID /usr/lib64" Target="/host/usr/lib64" Default="/usr/lib64" Mode="rw" Description="Used so container can use unraid notification system during macOS creation process" Type="Path" Display="advanced" Required="true" Mask="false">/usr/lib64</Config>
+  <Config Name="unraid vm icons host locaction" Target="/unraid_vm_icons" Default="/usr/local/emhttp/plugins/dynamix.vm.manager/templates/images/" Mode="rw" Description="Location of where Unraid stores VM icons, aloowing container to use custom macOS icon" Type="Path" Display="advanced" Required="true" Mask="false">/usr/local/emhttp/plugins/dynamix.vm.manager/templates/images/</Config>
+  <Config Name="NVRAM location" Target="/var/lib/libvirt/qemu/nvram" Default="/var/lib/libvirt/qemu/nvram" Mode="rw" Description="NVRAM location on host. Used so container can create a unique nvram file for the macOS VM" Type="Path" Display="advanced" Required="true" Mask="false">/var/lib/libvirt/qemu/nvram</Config>
+  <Config Name="UNRIAD DOMAIN CONFIG" Target="/vm/domain.cfg" Default="/boot/config/domain.cfg" Mode="rw" Description="UNRAID domain.cfg path. Used to find VM Default network source" Type="Path" Display="advanced" Required="true" Mask="false">/boot/config/domain.cfg</Config>
+  <Config Name="UNRAID /usr/lib" Target="/host/usr/lib" Default="/usr/lib" Mode="rw" Description="Used so container can use unraid notification system during macOS creation process" Type="Path" Display="advanced" Required="true" Mask="false">/usr/lib</Config>
+  <Config Name="UNRAID /lib64" Target="/host/lib64" Default="/lib64" Mode="rw" Description="Used so container can use unraid notification system during macOS creation process" Type="Path" Display="advanced" Required="true" Mask="false">/lib64</Config>
+  <Config Name="UNRAID /usr/local/emhttp/webGui/scripts/" Target="/host/usr/local/emhttp/webGui/scripts/" Default="/usr/local/emhttp/webGui/scripts/" Mode="rw" Description="Used so container can use unraid notification system during macOS creation process" Type="Path" Display="advanced" Required="true" Mask="false">/usr/local/emhttp/webGui/scripts/</Config>
+  <Config Name="UNRAID /usr/local/emhttp/webGui/include/" Target="/host/usr/local/emhttp/webGui/include/" Default="/usr/local/emhttp/webGui/include/" Mode="rw" Description="Used so container can use unraid notification system during macOS creation process" Type="Path" Display="advanced" Required="true" Mask="false">/usr/local/emhttp/webGui/include/</Config>
+  <Config Name="UNRAID /tmp/notifications" Target="/host/tmp/notifications" Default="/tmp/notifications" Mode="rw" Description="Used so container can use unraid notification system during macOS creation process" Type="Path" Display="advanced" Required="true" Mask="false">/tmp/notifications</Config>
+  <Config Name="UNRAID /boot/config/plugins/dynamix/" Target="/host/boot/config/plugins/dynamix/" Default="/boot/config/plugins/dynamix/" Mode="rw" Description="Used so container can use unraid notification system during macOS creation process" Type="Path" Display="advanced" Required="true" Mask="false">/boot/config/plugins/dynamix/</Config>
+  <Config Name="LIBVIRT Location" Target="/var/run/libvirt" Default="/var/run/libvirt" Mode="rw" Description="LIBVIRT Location on host. Used so container can define the macOS vm" Type="Path" Display="advanced" Required="true" Mask="false">/var/run/libvirt</Config>
+  <Config Name="UNRAID /usr/bin" Target="/host/usr/bin" Default="" Mode="rw" Description="Used so container can use unraid notification system during macOS creation process" Type="Path" Display="advanced" Required="true" Mask="false">/usr/bin</Config>
+  <Config Name="UNRAID /lib" Target="/host/lib" Default="/lib" Mode="rw" Description="Used so container can use unraid notification system during macOS creation process" Type="Path" Display="advanced" Required="true" Mask="false">/lib</Config>
+  <Config Name="UNRAID docker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="UNRAID docker.sock. Used so container can use docker inspect to workout true locations of mapped locations to create the xml used to define the macOS VM" Type="Path" Display="advanced" Required="true" Mask="false">/var/run/docker.sock</Config>
+</Container>
