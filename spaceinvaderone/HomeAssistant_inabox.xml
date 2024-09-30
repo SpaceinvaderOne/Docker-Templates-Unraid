@@ -35,28 +35,28 @@ Port used by the container to access the Home Assistant WebUI --Default: `8123`&
 - During the VM installation, the container dynamically builds the XML template based on the current configuration.&#xD;
 - It automatically detects the highest available QEMU machine type on the server and adjusts the VM template to use the optimal configuration.&#xD;
 - For smooth operation, ensure that the VM storage and appdata paths are correctly set according to your Unraid shares.</Overview>
-  <Category>Tools: Other:</Category>
+  <Category>Tools:Utilities Other:</Category>
   <WebUI>http://[IP]:[PORT:8123]</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/macinabox.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/HomeAssistant_inabox.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/docker_icons/HomeAssistant.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1727570703</DateInstalled>
+  <DateInstalled>1727732564</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires>On your server make sure to have the VM service enabled. Optional have notifications enabled for HomeAssistant_inabox to send GUI messages during install.</Requires>
   <Config Name="VM Name" Target="VMNAME" Default="" Mode="" Description="Enter a different name if you want the VM to have a name other than the OS name. If left blank, the container will use the default OS name installed." Type="Variable" Display="always" Required="false" Mask="false">Home Assistant</Config>
   <Config Name="Home Assistant URL" Target="CHECKURL" Default="https://www.home-assistant.io/installation/linux" Mode="" Description="page to scrape for download link" Type="Variable" Display="always" Required="true" Mask="false">https://www.home-assistant.io/installation/linux</Config>
   <Config Name="VM Images Location" Target="/domains" Default="/mnt/user/domains/" Mode="rw" Description="Please choose the storage location for your VM images on the server. The default path is set to /mnt/user/domains/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/domains/</Config>
-  <Config Name="Appdata Location:" Target="/config" Default="/mnt/user/appdata/macinabox-1" Mode="rw" Description="Please choose the storage location for your appdata  The default path is set to /mnt/user/appdata/macinabox/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/HomeAssistant_inabox</Config>
+  <Config Name="Appdata Location:" Target="/config" Default="/mnt/user/appdata/HomeAssistant_inabox" Mode="rw" Description="Please choose the storage location for your appdata  The default path is set to /mnt/user/appdata/macinabox/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/HomeAssistant_inabox</Config>
   <Config Name="Keep Vm Running" Target="RESTART" Default="Yes|No" Mode="" Description="If Vm should stop container will restart it. Ensures Home Assistant will keep running should VM stop" Type="Variable" Display="always" Required="false" Mask="false">Yes</Config>
-  <Config Name="Check Time" Target="CHECK" Default="15" Mode="" Description="Check if VM is running (default every 15 mins)" Type="Variable" Display="always" Required="false" Mask="false">2</Config>
+  <Config Name="Check Time" Target="CHECK" Default="15" Mode="" Description="Check if VM is running (default every 15 mins)" Type="Variable" Display="always" Required="false" Mask="false">15</Config>
   <Config Name="HA_inabox WebUI Port" Target="8123" Default="8123" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8123</Config>
   <Config Name="unraid_vm_icons" Target="/icons" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="false" Mask="false">/usr/local/emhttp/plugins/dynamix.vm.manager/templates/images</Config>
   <Config Name="UNRAID /usr/lib64" Target="/host/usr/lib64" Default="/usr/lib64" Mode="rw" Description="Used so container can use unraid notification system during macOS creation process" Type="Path" Display="advanced" Required="true" Mask="false">/usr/lib64</Config>
   <Config Name="unraid vm icons host locaction" Target="/unraid_vm_icons" Default="/usr/local/emhttp/plugins/dynamix.vm.manager/templates/images/" Mode="rw" Description="Location of where Unraid stores VM icons, aloowing container to use custom macOS icon" Type="Path" Display="advanced" Required="true" Mask="false">/usr/local/emhttp/plugins/dynamix.vm.manager/templates/images/</Config>
-  <Config Name="NVRAM location" Target="/var/lib/libvirt/qemu/nvram" Default="/var/lib/libvirt/qemu/nvram" Mode="rw" Description="NVRAM location on host. Used so container can create a unique nvram file for the macOS VM" Type="Path" Display="advanced" Required="true" Mask="false">/var/lib/libvirt/qemu/nvram</Config>
+  <Config Name="NVRAM location" Target="/etc/libvirt/qemu/nvram/" Default="/etc/libvirt/qemu/nvram/" Mode="rw" Description="NVRAM location on host. Used so container can create a unique nvram file for the macOS VM" Type="Path" Display="advanced" Required="true" Mask="false">/etc/libvirt/qemu/nvram/</Config>
   <Config Name="UNRIAD DOMAIN CONFIG" Target="/vm/domain.cfg" Default="/boot/config/domain.cfg" Mode="rw" Description="UNRAID domain.cfg path. Used to find VM Default network source" Type="Path" Display="advanced" Required="true" Mask="false">/boot/config/domain.cfg</Config>
   <Config Name="UNRAID /usr/lib" Target="/host/usr/lib" Default="/usr/lib" Mode="rw" Description="Used so container can use unraid notification system during macOS creation process" Type="Path" Display="advanced" Required="true" Mask="false">/usr/lib</Config>
   <Config Name="UNRAID /lib64" Target="/host/lib64" Default="/lib64" Mode="rw" Description="Used so container can use unraid notification system during macOS creation process" Type="Path" Display="advanced" Required="true" Mask="false">/lib64</Config>
