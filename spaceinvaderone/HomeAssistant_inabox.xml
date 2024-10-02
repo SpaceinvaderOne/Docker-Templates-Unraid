@@ -42,7 +42,7 @@ Port used by the container to access the Home Assistant WebUI --Default: `8123`&
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1727732564</DateInstalled>
+  <DateInstalled>1727874225</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires>On your server make sure to have the VM service enabled. Optional have notifications enabled for HomeAssistant_inabox to send GUI messages during install.</Requires>
@@ -68,4 +68,5 @@ Port used by the container to access the Home Assistant WebUI --Default: `8123`&
   <Config Name="UNRAID /usr/bin" Target="/host/usr/bin" Default="" Mode="rw" Description="Used so container can use unraid notification system during macOS creation process" Type="Path" Display="advanced" Required="true" Mask="false">/usr/bin</Config>
   <Config Name="UNRAID /lib" Target="/host/lib" Default="/lib" Mode="rw" Description="Used so container can use unraid notification system during macOS creation process" Type="Path" Display="advanced" Required="true" Mask="false">/lib</Config>
   <Config Name="UNRAID docker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="UNRAID docker.sock. Used so container can use docker inspect to workout true locations of mapped locations to create the xml used to define the macOS VM" Type="Path" Display="advanced" Required="true" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="HA_inabox version" Target="WHATVERSION" Default="2" Mode="" Description="template evrsion of container. used to check template is correct version for version of software" Type="Variable" Display="advanced" Required="true" Mask="false">2</Config>
 </Container>
