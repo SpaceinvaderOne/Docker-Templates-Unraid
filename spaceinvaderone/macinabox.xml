@@ -70,7 +70,7 @@ Specify where you want macinabox to store its appdata.&#xD;
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1727733145</DateInstalled>
+  <DateInstalled>1727872306</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires>On your server make sure to have notifications enabled and docker update notifications enabled. This will allow the container to send notifications as macinabox runs.</Requires>
@@ -85,7 +85,7 @@ Specify where you want macinabox to store its appdata.&#xD;
   <Config Name="VM Images Location" Target="/domains" Default="/mnt/user/domains/" Mode="rw" Description="Please choose the storage location for your VM images on the server. The default path is set to /mnt/user/domains/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/domains/</Config>
   <Config Name="Isos Share Location" Target="/isos" Default="/mnt/user/isos/" Mode="rw" Description="Please choose the storage location for your ISO files on the server. The default path is set to /mnt/user/isos/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/isos/</Config>
   <Config Name="Appdata Location:" Target="/config" Default="/mnt/user/appdata/macinabox" Mode="rw" Description="Please choose the storage location for your appdata  The default path is set to /mnt/user/appdata/macinabox/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/macinabox</Config>
-  <Config Name="macinabox version" Target="WHATVERSION" Default="3" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">3</Config>
+  <Config Name="macinabox version" Target="WHATVERSION" Default="3" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">4</Config>
   <Config Name="unraid_vm_icons" Target="/icons" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="false" Mask="false">/usr/local/emhttp/plugins/dynamix.vm.manager/templates/images</Config>
   <Config Name="UNRAID /usr/lib64" Target="/host/usr/lib64" Default="/usr/lib64" Mode="rw" Description="Used so container can use unraid notification system during macOS creation process" Type="Path" Display="advanced" Required="true" Mask="false">/usr/lib64</Config>
   <Config Name="unraid vm icons host locaction" Target="/unraid_vm_icons" Default="/usr/local/emhttp/plugins/dynamix.vm.manager/templates/images/" Mode="rw" Description="Location of where Unraid stores VM icons, aloowing container to use custom macOS icon" Type="Path" Display="advanced" Required="true" Mask="false">/usr/local/emhttp/plugins/dynamix.vm.manager/templates/images/</Config>
