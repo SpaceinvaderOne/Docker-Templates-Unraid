@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>nextcloud-aio-mastercontainer</Name>
+  <Repository>nextcloud/all-in-one:latest</Repository>
+  <Registry>https://registry.hub.docker.com/r/nextcloud/all-in-one</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/nextcloud/all-in-one</Project>
+  <Overview>The official Nextcloud installation method. Nextcloud AIO provides easy deployment and maintenance with most features included in this one Nextcloud instance.&#xD;
+Included are...&#xD;
+Nextcloud&#xD;
+High performance backend for Nextcloud Files&#xD;
+Nextcloud Office (optional)&#xD;
+High performance backend for Nextcloud Talk and TURN-server (optional)&#xD;
+Nextcloud Talk Recording-server (optional)&#xD;
+Backup solution (optional, based on BorgBackup)&#xD;
+Imaginary (optional, for previews of heic, heif, illustrator, pdf, svg, tiff and webp)&#xD;
+ClamAV (optional, Antivirus backend for Nextcloud)&#xD;
+Fulltextsearch (optional)&#xD;
+Whiteboard (optional)&#xD;
+Docker Socket Proxy (optional, needed for Nextcloud App API)</Overview>
+  <Category>Cloud:</Category>
+  <WebUI>https://[IP]:[PORT:8080]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Muwahhidun/unraid-docker-templates/master/my-nextcloud-aio-mastercontainer.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/refs/heads/master/spaceinvaderone/docker_icons/nextcloud_aio.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1729717240</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Preserve user defined networks: should be enabled as container uses custom docker networks&#xD;
+</Requires>
+  <Config Name="AIO webui" Target="8080" Default="8080" Mode="tcp" Description="Webui port for the AIO master container" Type="Port" Display="always" Required="true" Mask="false">7282</Config>
+  <Config Name="Nextcloud apache port" Target="APACHE_PORT" Default="11000" Mode="" Description="Port for nextcloud. This should be reverse proxied to your server IP " Type="Variable" Display="always" Required="true" Mask="false">11000</Config>
+  <Config Name="Nextcloud Data Directory" Target="NEXTCLOUD_DATADIR" Default="" Mode="" Description="Location of where you will store the nextcloud user data" Type="Variable" Display="always" Required="true" Mask="false">/mnt/user/nextcloud/</Config>
+  <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="Nextcloud AOI appdata docker volume" Target="/mnt/docker-aio-config" Default="nextcloud_aio_mastercontainer" Mode="rw" Description="Appdata (but this is a docker volume and is not in your appdata share)" Type="Path" Display="advanced" Required="true" Mask="false">nextcloud_aio_mastercontainer</Config>
+</Container>
