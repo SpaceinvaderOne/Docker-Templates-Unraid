@@ -21,8 +21,9 @@ Set this to "Yes" if you are running on Apple hardware. This is the only way to 
 &#xD;
 **Operating System Version:**  &#xD;
 Choose the macOS version from the options below:&#xD;
+- Sequoia&#xD;
 - Sonoma&#xD;
-- Ventura&#xD;
+- Ventura  --recommend install&#xD;
 - Monterey&#xD;
 - Big Sur&#xD;
 - Catalina&#xD;
@@ -70,12 +71,12 @@ Specify where you want macinabox to store its appdata.&#xD;
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1727872306</DateInstalled>
+  <DateInstalled>1730897898</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires>On your server make sure to have notifications enabled and docker update notifications enabled. This will allow the container to send notifications as macinabox runs.</Requires>
   <Config Name="Are you fully compliant with Apple&#x2019;s EULA ?" Target="OKTORUN" Default="NO|YES" Mode="" Description="Set to YES to use this container only if you are compliant with Apples EULA. To be compliant your server must be Apple Hardware (ie a Mac Pro/Mini) then the EULA states For virtualisation: &#x201C;You may also install, use, and run up to two additional copies or instances of the Apple Software within virtual operating system environments on each Apple-branded computer you own or control." Type="Variable" Display="always" Required="true" Mask="false">NO</Config>
-  <Config Name="Operating System Version" Target="flavour" Default="Ventura|Sonoma|Monterey|Big Sur|Catalina|Mojave|High Sierra" Mode="" Description="Choose macOS version to instal" Type="Variable" Display="always" Required="true" Mask="false">Ventura</Config>
+  <Config Name="Operating System Version" Target="flavour" Default="Ventura|Sequoia|Sonoma|Monterey|Big Sur|Catalina|Mojave|High Sierra" Mode="" Description="Choose macOS version to instal" Type="Variable" Display="always" Required="true" Mask="false">Ventura</Config>
   <Config Name="Custom VM Name" Target="CUSTOMNAME" Default="" Mode="" Description="Enter a different name if you want the VM to have a name other than the OS name. If left blank, the container will use the default OS name installed." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Vdisk Type" Target="vdisktype" Default="raw|qcow2" Mode="" Description="Choose vdisk type  raw or qcow2  (qcow2 takes less space)" Type="Variable" Display="always" Required="true" Mask="false">raw</Config>
   <Config Name="vDisk Size" Target="vdisksize" Default="" Mode="" Description="Select the size of your virtual disk (vDisk) in Gigabytes G" Type="Variable" Display="always" Required="true" Mask="false">100G</Config>
