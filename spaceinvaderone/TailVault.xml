@@ -7,8 +7,8 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support/>
-  <Project/>
+  <Support>https://github.com/SpaceinvaderOne/TailVault</Support>
+  <Project>https://github.com/SpaceinvaderOne/TailVault</Project>
   <Overview>TailVault is a secure and lightweight container designed for Unraid 7 and above, enabling friends to share a dedicated backup location over Tailscale. TailVault provides an SFTP destination, allowing a friend to back up their data directly to your server both securely and privately.&#xD;
 &#xD;
 Features&#xD;
@@ -41,11 +41,11 @@ Notes&#xD;
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1733934471</DateInstalled>
+  <DateInstalled>1733941433</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires>Enable Tailscale in the container and connect it to your Tailnet.</Requires>
-  <Config Name="TailVault Backups" Target="/backups" Default="" Mode="rw" Description="This location is where you can set to allow friens to backup to on your server" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="TailVault Backups" Target="/backups" Default="" Mode="rw" Description="This location is where you can set to allow friens to backup to on your server" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="SFTP_USER" Target="SFTP_USER" Default="" Mode="" Description="user for backup software to use to connect" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="SFTP_PASS" Target="SFTP_PASS" Default="" Mode="" Description="password for backup software to use to connect" Type="Variable" Display="always" Required="true" Mask="true"/>
   <Config Name="Host Port 1" Target="22" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">2222</Config>
