@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>TailVault</Name>
+  <Repository>spaceinvaderone/tailvault:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>TailVault is a secure and lightweight container designed for Unraid 7 and above, enabling friends to share a dedicated backup location over Tailscale. TailVault provides an SFTP destination, allowing a friend to back up their data directly to your server both securely and privately.&#xD;
+&#xD;
+Features&#xD;
+		Friend-Specific Backup Access - TailVault restricts access so your friend can only back up to the designated directory on your server. They cannot access any other part of your system.&#xD;
+		Tailscale Integration - Backups are conducted over Tailscale, so Tailscale must be installed in this container using Unraid&#x2019;s built-in Tailscale Docker integration. This ensures end-to-end encryption and secure networking without the need for additional VPNs or firewall changes.&#xD;
+&#xD;
+Use Cases&#xD;
+	1.	Backups Using Backup Software&#xD;
+		Configure backup software (e.g., Duplicati) on your friend&#x2019;s server to send backups over Tailscale to TailVault. These backups are encrypted before being sent, ensuring complete privacy.&#xD;
+	2.	Rsync Jobs&#xD;
+		Use TailVault as a destination for rsync jobs or other backup tools from another Unraid server or device in the same Tailnet.&#xD;
+&#xD;
+How to Configure the Template&#xD;
+	1.	Enable Tailscale&#xD;
+		Enable Tailscale in the container and connect it to your Tailnet.&#xD;
+		In the Tailscale admin console, share the container with your friend to whom you want to allow to backup to your server.&#xD;
+	2.	Set TailVault Backups Directory&#xD;
+		Configure this to the location where your friend will store their backups. This directory should be empty and not contain any existing data.&#xD;
+	3.	Set User Credentials&#xD;
+		SFTP_USER   Choose a username to share with your friend.&#xD;
+		SFTP_PASS    Set a password to share with your friend.&#xD;
+&#xD;
+Notes&#xD;
+		If using backup software on the sending server (e.g., Duplicati), it is recommended to set the networking type of the sending container to host. This helps ensure a direct connection over Tailscale and reduces the likelihood of relying on a relay (DERP) server. TailVault itself can remain in bridge mode.&#xD;
+		</Overview>
+  <Category>Tools: Other: Network:VPN</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/docker_icons/TailVault.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1733934471</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Enable Tailscale in the container and connect it to your Tailnet.</Requires>
+  <Config Name="TailVault Backups" Target="/backups" Default="" Mode="rw" Description="This location is where you can set to allow friens to backup to on your server" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="SFTP_USER" Target="SFTP_USER" Default="" Mode="" Description="user for backup software to use to connect" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="SFTP_PASS" Target="SFTP_PASS" Default="" Mode="" Description="password for backup software to use to connect" Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="Host Port 1" Target="22" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">2222</Config>
+  <Config Name="tailscale states" Target="/config" Default="" Mode="rw" Description="appdata" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/tailvault</Config>
+  <TailscaleEnabled>true</TailscaleEnabled>
+  <TailscaleIsExitNode>false</TailscaleIsExitNode>
+  <TailscaleHostname>Tailvault</TailscaleHostname>
+  <TailscaleExitNodeIP/>
+  <TailscaleSSH>false</TailscaleSSH>
+  <TailscaleUserspaceNetworking>false</TailscaleUserspaceNetworking>
+  <TailscaleLANAccess>false</TailscaleLANAccess>
+  <TailscaleServe>no</TailscaleServe>
+  <TailscaleWebUI/>
+  <TailscaleDParams/>
+  <TailscaleParams/>
+  <TailscaleStateDir/>
+  <TailscaleRoutes/>
+  <TailscaleAcceptRoutes>false</TailscaleAcceptRoutes>
+</Container>
