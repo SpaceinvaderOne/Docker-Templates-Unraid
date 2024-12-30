@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>4get</Name>
+  <Repository>luuul/4get:latest</Repository>
+  <Registry>https://hub.docker.com/r/luuul/4get/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://git.lolcat.ca/lolcat/4get/issues</Support>
+  <Project>https://git.lolcat.ca/lolcat/4get</Project>
+  <Overview>4get is a lightweight, open-source proxy search engine designed to provide a private, ad-free search experience. It allows users to query popular search engines like Google, DuckDuckGo, and others without tracking or displaying sponsored ads. Beyond web searches, 4get supports media-specific queries for videos, images, music, and more, making it a versatile tool for privacy-conscious users.&#xD;
+For enhanced privacy, it can be combined with Tailscale (Unraid 7 and above) for secure remote access and routed through a VPN exit point for IP anonymisation.&#xD;
+&#xD;
+Features&#xD;
+	&#x2022;	Proxy-based search for privacy and simplicity.&#xD;
+	&#x2022;	Support for multiple search engines and media-specific queries (web, video, images, music, etc.).&#xD;
+	&#x2022;	No ads or sponsored results.&#xD;
+&#xD;
+Setup Recommendations&#xD;
+	&#x2022;	Combine with Tailscale for secure, remote access.&#xD;
+	&#x2022;	Use with a VPN exit point (e.g., Gluetun VPN) to anonymise outgoing queries.</Overview>
+  <Category>Network:Web</Category>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/docker_icons/4get.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1735573417</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Webui" Target="80" Default="280" Mode="tcp" Description="Webui port" Type="Port" Display="always" Required="false" Mask="false">280</Config>
+  <Config Name="appdata" Target="/conf" Default="/mnt/user/appdata" Mode="rw" Description="appdata root" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata</Config>
+  <Config Name="certs" Target="/etc/4get/certs" Default="/mnt/user/appdata/4get/certs" Mode="rw" Description="Not usually needed" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/4get/certs</Config>
+  <Config Name="captcha" Target="/var/www/html/4get/data/captcha" Default="/mnt/user/appdata/4get/captcha" Mode="rw" Description="captcha" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/4get/captcha</Config>
+  <Config Name="Server name" Target="FOURGET_SERVER_NAME" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="http/https" Target="FOURGET_PROTO" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">http</Config>
+  <Config Name="Bot protection" Target="FOURGET_BOT_PROTECTION" Default="0" Mode="" Description="bot protection only need if on open interent" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="banners" Target="/var/www/html/4get/banner" Default="/mnt/user/appdata/4get/banner" Mode="rw" Description="custom banner location" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/4get/banner</Config>
+  <TailscaleStateDir/>
+</Container>
