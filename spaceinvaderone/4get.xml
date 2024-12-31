@@ -22,17 +22,17 @@ Setup Recommendations&#xD;
 	&#x2022;	Use with a VPN exit point (e.g., Gluetun VPN) to anonymise outgoing queries.</Overview>
   <Category>Network:Web</Category>
   <WebUI>http://[IP]:[PORT:80]</WebUI>
-  <TemplateURL/>
+  <TemplateURL>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/4get.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/docker_icons/4get.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1735573417</DateInstalled>
+  <DateInstalled>1735652930</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
   <Config Name="Webui" Target="80" Default="280" Mode="tcp" Description="Webui port" Type="Port" Display="always" Required="false" Mask="false">280</Config>
-  <Config Name="appdata" Target="/conf" Default="/mnt/user/appdata" Mode="rw" Description="appdata root" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata</Config>
+  <Config Name="appdata" Target="/config" Default="/mnt/user/appdata" Mode="rw" Description="appdata root" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata</Config>
   <Config Name="certs" Target="/etc/4get/certs" Default="/mnt/user/appdata/4get/certs" Mode="rw" Description="Not usually needed" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/4get/certs</Config>
   <Config Name="captcha" Target="/var/www/html/4get/data/captcha" Default="/mnt/user/appdata/4get/captcha" Mode="rw" Description="captcha" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/4get/captcha</Config>
   <Config Name="Server name" Target="FOURGET_SERVER_NAME" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
