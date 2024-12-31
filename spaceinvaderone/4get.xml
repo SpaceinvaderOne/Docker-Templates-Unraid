@@ -27,17 +27,17 @@ Setup Recommendations&#xD;
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1735652930</DateInstalled>
+  <DateInstalled>1735653696</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
   <Config Name="Webui" Target="80" Default="280" Mode="tcp" Description="Webui port" Type="Port" Display="always" Required="false" Mask="false">280</Config>
-  <Config Name="appdata" Target="/config" Default="/mnt/user/appdata" Mode="rw" Description="appdata root" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata</Config>
-  <Config Name="certs" Target="/etc/4get/certs" Default="/mnt/user/appdata/4get/certs" Mode="rw" Description="Not usually needed" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/4get/certs</Config>
-  <Config Name="captcha" Target="/var/www/html/4get/data/captcha" Default="/mnt/user/appdata/4get/captcha" Mode="rw" Description="captcha" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/4get/captcha</Config>
+  <Config Name="appdata" Target="/config" Default="/mnt/user/appdata/4get/" Mode="rw" Description="appdata root" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/4get/</Config>
+  <Config Name="certs" Target="/etc/4get/certs" Default="/mnt/user/appdata/4get/certs" Mode="rw" Description="Not usually needed" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/4get/certs/</Config>
+  <Config Name="captcha" Target="/var/www/html/4get/data/captcha" Default="/mnt/user/appdata/4get/captcha" Mode="rw" Description="captcha" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/4get/captcha/</Config>
   <Config Name="Server name" Target="FOURGET_SERVER_NAME" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
   <Config Name="http/https" Target="FOURGET_PROTO" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">http</Config>
   <Config Name="Bot protection" Target="FOURGET_BOT_PROTECTION" Default="0" Mode="" Description="bot protection only need if on open interent" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
-  <Config Name="banners" Target="/var/www/html/4get/banner" Default="/mnt/user/appdata/4get/banner" Mode="rw" Description="custom banner location" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/4get/banner</Config>
+  <Config Name="banners" Target="/var/www/html/4get/banner" Default="/mnt/user/appdata/4get/banner" Mode="rw" Description="custom banner location" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/4get/banner/</Config>
   <TailscaleStateDir/>
 </Container>
