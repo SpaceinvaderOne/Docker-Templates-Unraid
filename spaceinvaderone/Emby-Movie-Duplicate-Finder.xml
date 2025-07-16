@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Emby-Movie-Duplicate-Finder</Name>
+  <Repository>spaceinvaderone/emby_duplicate_finder:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/SpaceinvaderOne/Emby-Duplicate-Finder</Support>
+  <Project/>
+  <Overview>Web-based tool to find duplicate movies in your Emby library.&#xD;
+Runs in Alpine with Nginx. Enter your Emby server URL and API key to scan for duplicates by exact name and year. Results are shown in browser with file paths, downloadable as a list, and can optionally be deleted directly from the tool.</Overview>
+  <Category>MediaApp:Video</Category>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <TemplateURL/>
+  <Icon>https://github.com/SpaceinvaderOne/Emby-Duplicate-Finder/raw/main/emby-duplicate-finder-icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1752679653</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Webui" Target="80" Default="7075" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">7075</Config>
+  <TailscaleStateDir/>
+</Container>
