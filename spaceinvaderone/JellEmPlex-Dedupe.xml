@@ -20,7 +20,7 @@
   <DateInstalled>1752871955</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Requires>You need to be running Jellyfin, Emby or plex to use this tool</Requires>
+  <Requires>You need to be running Jellyfin, Emby or Plex to use this tool</Requires>
   <Config Name="appdata" Target="/app/serverconfig" Default="/mnt/user/appdata/jellEmPlex-Dedupe" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/JellEmPlex-Dedupe</Config>
   <Config Name="WebUI" Target="80" Default="3699" Mode="tcp" Description="Webui" Type="Port" Display="always" Required="true" Mask="false">3699</Config>
   <TailscaleStateDir/>
