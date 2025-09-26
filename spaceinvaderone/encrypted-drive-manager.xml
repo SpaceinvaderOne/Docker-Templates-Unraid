@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+<Plugin>True</Plugin>
+<PluginURL>https://raw.githubusercontent.com/SpaceinvaderOne/encrypted-drive-manager/main/unraid-plugin/encrypted-drive-manager.plg</PluginURL>
+<PluginAuthor>SpaceInvaderOne</PluginAuthor>
+<Beta>False</Beta>
+<Category>Tools:Security</Category>
+<Name>Encrypted Drive Manager</Name>
+<CA>AddOn</CA>
+<Description>
+Comprehensive tool for managing encrypted drives with hardware-bound auto-unlock, LUKS header backup, key management, and encryption analysis. Creates hardware-derived keys tied to your server's location and hardware for secure automatic unlocking that fails if the server is stolen or moved.
+</Description>
+<Date>2025-09-26</Date>
+<Support>https://forums.unraid.net/topic/193798-plugin-encrypted-drive-manager/</Support>
+<Icon>https://raw.githubusercontent.com/SpaceinvaderOne/encrypted-drive-manager/main/source/usr/local/emhttp/plugins/encrypted-drive-manager/images/EDM-Icon.png</Icon>
+<DonateImg>https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif</DonateImg>
+<DonateLink>https://www.paypal.com/donate/?hosted_button_id=RP5FEC93HWN5N</DonateLink>
+<Screenshot>https://raw.githubusercontent.com/SpaceinvaderOne/encrypted-drive-manager/main/packages/images/screenshot.png</Screenshot>
+</Containers>
