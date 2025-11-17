@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>PIA-WG-Config-Generator</Name>
+  <Repository>spaceinvaderone/pia-wg-config-generator:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://hub.docker.com/r/spaceinvaderone/pia-wg-config-generator/tags</Project>
+  <Overview>Generate WireGuard configs for Private Internet Access VPN. Route individual Docker containers through PIA Wireguard VPN tunnels.&#13;
+This container provides a simple web interface where you enter your PIA credentials, select a region, and download a ready to use WireGuard configuration file. The generated configs work with any WireGuard client, but are optimised for Unraid's VPN Manager with automatic tunnel naming.</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:8292]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/pia-wg-config-generator/refs/heads/master/PIA-WG-Config-Generator.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1763337996</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="webui" Target="80" Default="8292" Mode="tcp" Description="webui" Type="Port" Display="always" Required="false" Mask="false">8292</Config>
+  <TailscaleStateDir/>
+</Container>
