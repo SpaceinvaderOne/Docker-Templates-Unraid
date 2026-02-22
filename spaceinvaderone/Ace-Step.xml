@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ACE-Step</Name>
+  <Repository>spaceinvaderone/ace-step:latest</Repository>
+  <Registry>https://hub.docker.com/r/spaceinvaderone/ace-step/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/ace-step/ACE-Step-1.5</Project>
+  <ReadMe/>
+  <Overview>ACE-Step 1.5 - AI Music Generation. Generate full songs with vocals, instrumentals, and lyrics using a Diffusion Transformer. Supports text-to-music, remixing, cover generation, and LoRA fine-tuning. Requires NVIDIA GPU with CUDA support.&#13;
+&#13;
+FIRST RUN: Models (~10GB) will be downloaded automatically on first start. This may take several minutes depending on your internet speed. Subsequent starts are instant.&#13;
+&#13;
+SETTINGS GUIDE:&#13;
+&#13;
+DiT Model - The core music generation model.&#13;
+- turbo (default): Fast generation in 8 steps. Best for most users.&#13;
+- turbo-rl: Turbo with reinforcement learning refinement.&#13;
+- sft: Higher quality, 50 steps (slower).&#13;
+- base: 50 steps with all features (extract, lego, complete).&#13;
+&#13;
+Language Model - Controls lyrics understanding and chain-of-thought reasoning.&#13;
+- 1.7B (default): Best balance of quality and VRAM. Recommended for 12-16GB GPUs.&#13;
+- 0.6B: For GPUs with less than 12GB VRAM.&#13;
+- 4B: Highest quality lyrics understanding. Requires 24GB+ VRAM.&#13;
+&#13;
+Enable LLM - Whether to load the language model.&#13;
+- auto (default): Detects based on your GPU VRAM.&#13;
+- false: DiT-only mode. Faster startup, uses less VRAM, but disables thinking/sample features.&#13;
+- true: Force enable.&#13;
+&#13;
+LM Backend - Engine for the language model.&#13;
+- pt (default): PyTorch native. Works on all GPUs including RTX 50-series.&#13;
+- vllm: Faster inference but may crash on RTX 50-series (Blackwell) GPUs.&#13;
+&#13;
+CPU Offloading - Moves models between GPU and CPU to save VRAM.&#13;
+- auto (default): Offloads if GPU has less than 20GB VRAM.&#13;
+- false: Keep all models on GPU. Faster generation but uses ~12GB VRAM at idle.&#13;
+- true: Always offload. Slower but frees VRAM for other containers.&#13;
+&#13;
+UI Language - Web interface language: English, Chinese, or Japanese.</Overview>
+  <Category>AI: MediaApp:Music</Category>
+  <WebUI>http://[IP]:[PORT:7860]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://acestep.io/favicon-256.ico</Icon>
+  <ExtraParams>--gpus all --user root</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1771764112</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>IMPORTANT: This image requires at least 20GB of free space in your Docker vDisk. Check Settings &amp;gt; Docker &amp;gt; Docker vDisk Size and increase if needed. Requires NVIDIA GPU with 8GB+ VRAM (12GB+ recommended for full features). Models (~10GB) are downloaded on first run to the mapped checkpoints volume.</Requires>
+  <Config Name="Web UI Port" Target="7860" Default="7860" Mode="tcp" Description="Gradio Web UI and REST API port" Type="Port" Display="always" Required="true" Mask="false">7860</Config>
+  <Config Name="Model Checkpoints" Target="/app/checkpoints" Default="/mnt/user/appdata/ace-step/checkpoints" Mode="rw" Description="AI model files (~10GB, auto-downloaded on first run)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ace-step/checkpoints</Config>
+  <Config Name="Generated Music" Target="/app/gradio_outputs" Default="/mnt/user/appdata/ace-step/output" Mode="rw" Description="Generated music files output directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ace-step/output</Config>
+  <Config Name="DiT Model" Target="ACESTEP_CONFIG_PATH" Default="acestep-v15-turbo|acestep-v15-turbo-rl|acestep-v15-sft|acestep-v15-base" Mode="{3}" Description="Diffusion model variant. Turbo=8 steps (fast), SFT=50 steps (quality), Base=50 steps (all features including extract/lego/complete)." Type="Variable" Display="always" Required="true" Mask="false">acestep-v15-turbo</Config>
+  <Config Name="Language Model" Target="ACESTEP_LM_MODEL_PATH" Default="acestep-5Hz-lm-1.7B|acestep-5Hz-lm-0.6B|acestep-5Hz-lm-4B" Mode="{3}" Description="Chain-of-thought LM size. 1.7B recommended for 16GB VRAM. 4B needs 24GB+. 0.6B for low VRAM." Type="Variable" Display="always" Required="true" Mask="false">acestep-5Hz-lm-1.7B</Config>
+  <Config Name="Enable LLM" Target="ACESTEP_INIT_LLM" Default="auto|true|false" Mode="{3}" Description="Auto detects based on GPU VRAM. Set false for DiT-only mode (faster, no thinking/sample features)." Type="Variable" Display="always" Required="false" Mask="false">auto</Config>
+  <Config Name="LM Backend" Target="ACESTEP_LM_BACKEND" Default="pt|vllm" Mode="{3}" Description="pt (PyTorch native) is recommended for RTX 50-series. vllm (nano-vllm) is faster but may segfault on Blackwell GPUs." Type="Variable" Display="always" Required="false" Mask="false">pt</Config>
+  <Config Name="UI Language" Target="LANGUAGE" Default="en|zh|ja" Mode="{3}" Description="Web interface language" Type="Variable" Display="always" Required="false" Mask="false">en</Config>
+  <Config Name="CPU Offloading" Target="ACESTEP_OFFLOAD_CPU" Default="auto|false|true" Mode="{3}" Description="auto = ACE-Step decides based on VRAM (offloads below 20GB). false = keep all models on GPU (faster, needs ~12GB idle VRAM). true = offload models to CPU between steps (slower, saves VRAM for shared GPU use)." Type="Variable" Display="always" Required="false" Mask="false">auto</Config>
+  <Config Name="Web UI Port (internal)" Target="PORT" Default="7860" Mode="{3}" Description="Internal port for Gradio server (should match the port mapping above)" Type="Variable" Display="advanced" Required="false" Mask="false">7860</Config>
+  <Config Name="Batch Size" Target="ACESTEP_BATCH_SIZE" Default="" Mode="{3}" Description="Default generation batch size (1-8). Leave empty for auto (min(2, GPU max))." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="CUDA Visible Devices" Target="CUDA_VISIBLE_DEVICES" Default="0" Mode="{3}" Description="Which GPU(s) to use. 0 = first GPU." Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="Download Source" Target="ACESTEP_DOWNLOAD_SOURCE" Default="auto|huggingface|modelscope" Mode="{3}" Description="Model download source. Auto tries HuggingFace first, falls back to ModelScope." Type="Variable" Display="advanced" Required="false" Mask="false">auto</Config>
+  <TailscaleStateDir/>
+</Container>
