@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ollama-intel-gpu</Name>
+  <Repository>spaceinvaderone/ollama-intel-gpu</Repository>
+  <Registry>https://hub.docker.com/r/spaceinvaderone/ollama-intel-gpu/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <ReadMe>https://github.com/spaceinvaderone/intel-ollama/blob/main/README.md</ReadMe>
+  <Overview>Ollama for Intel Arc GPUs (B580, A770, A750, etc.) powered by Intel IPEX-LLM.&#13;
+Drop-in replacement for the standard Ollama container &#x2014; exposes the same API on port 11434.&#13;
+Requires an Intel Arc GPU </Overview>
+  <Category>AI: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:11434]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/spaceinvaderone/intel-ollama/main/ollama-intel-gpu.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/docker_icons/ollama-intel.png</Icon>
+  <ExtraParams>--device=/dev/dri</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1774713208</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Intel Arc GPU (B580, A770, A750, or other Arc series) with kernel driver loaded.</Requires>
+  <Config Name="Model Storage" Target="/root/.ollama" Default="/mnt/user/appdata/ollama-intel-gpu" Mode="rw" Description="Path on the host for persistent model storage. Models are large (4-20 GB each)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ollama-intel-gpu</Config>
+  <Config Name="Ollama API Port" Target="11434" Default="11434" Mode="tcp" Description="Port for the Ollama API." Type="Port" Display="always" Required="true" Mask="false">11434</Config>
+  <Config Name="OLLAMA_ORIGINS" Target="OLLAMA_ORIGINS" Default="*" Mode="" Description="Allowed origins for CORS. Set to * to allow Open WebUI and other frontends to connect." Type="Variable" Display="always" Required="false" Mask="false">*</Config>
+  <Config Name="ONEAPI_DEVICE_SELECTOR" Target="ONEAPI_DEVICE_SELECTOR" Default="level_zero:0" Mode="" Description="Select which Intel GPU to use. Use level_zero:0 for the first GPU. Change only if you have multiple Intel GPUs." Type="Variable" Display="always" Required="false" Mask="false">level_zero:0</Config>
+  <Config Name="OLLAMA_NUM_PARALLEL" Target="OLLAMA_NUM_PARALLEL" Default="1" Mode="" Description="Number of parallel inference requests. Set to 1 for 12 GB VRAM cards (B580). Increase only if you have more VRAM." Type="Variable" Display="always" Required="false" Mask="false">1</Config>
+  <Config Name="OLLAMA_NUM_CTX" Target="OLLAMA_NUM_CTX" Default="4096" Mode="" Description="Context window size in tokens. Larger values use more VRAM. Default 4096 is a good balance for 12 GB cards." Type="Variable" Display="always" Required="false" Mask="false">4096</Config>
+  <Config Name="OLLAMA_KEEP_ALIVE" Target="OLLAMA_KEEP_ALIVE" Default="5m" Mode="" Description="How long to keep a model loaded in VRAM after the last request. Use 5m for 5 minutes, -1 for forever, 0 to unload immediately." Type="Variable" Display="always" Required="false" Mask="false">5m</Config>
+  <TailscaleStateDir/>
+</Container>
