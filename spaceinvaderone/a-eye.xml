@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>a-eye</Name>
+  <Repository>spaceinvaderone/a-eye</Repository>
+  <Registry>https://github.com/SpaceinvaderOne/a-eye</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/SpaceinvaderOne/a-eye</Support>
+  <Project>https://github.com/spaceinvadeone/a-eye</Project>
+  <ReadMe/>
+  <Overview>A-Eye is a self hosted AI photo intelligence tool. Uses local vision models to understand, describe, tag, rename, and search your photos. No cloud needed, everything runs on your own hardware. Features natural language photo search, quality detection for blurry or accidental shots, XMP sidecar writing compatible with Immich, Lightroom, and digiKam, and a temporary workspace for processing photos from other devices. Works as a full photo renamer, a metadata enrichment tool, or a non destructive read only catalogue. Powered by Ollama for local AI inference</Overview>
+  <Category>AI: Productivity: MediaApp:Photos</Category>
+  <WebUI>http://[IP]:[PORT:8000]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/docker_icons/A-Eye%20Logo%20small.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1775034764</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Requires a running Ollama instance with a vision model pulled (e.g. minicpm-v).</Requires>
+  <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Port for the web interface" Type="Port" Display="always" Required="true" Mask="false">8001</Config>
+  <Config Name="Photos Directory" Target="/photos" Default="/mnt/user/photos" Mode="rw" Description="Path to your photos directory on the host" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/photos/</Config>
+  <Config Name="Ollama Host and port" Target="OLLAMA_HOST" Default="http://serverip:11434" Mode="" Description="URL of the Ollama instance" Type="Variable" Display="always" Required="false" Mask="false">http://serverip:11434</Config>
+  <Config Name="Watch Interval" Target="WATCH_INTERVAL" Default="60" Mode="" Description="Seconds between watch scans" Type="Variable" Display="advanced" Required="false" Mask="false">60</Config>
+  <Config Name="Filename Template" Target="FILENAME_TEMPLATE" Default="{description}_{location}_{date}" Mode="" Description="Naming template &#x2014; placeholders: {date}, {location}, {description}, {camera}" Type="Variable" Display="advanced" Required="false" Mask="false">{description}_{location}_{date}</Config>
+  <Config Name="Filename Case" Target="FILENAME_CASE" Default="lower" Mode="" Description="lower, title, or original" Type="Variable" Display="advanced" Required="false" Mask="false">lower</Config>
+  <Config Name="Max Filename Length" Target="MAX_FILENAME_LEN" Default="120" Mode="" Description="Maximum filename length" Type="Variable" Display="advanced" Required="false" Mask="false">120</Config>
+  <Config Name="Use EXIF Date" Target="USE_EXIF_DATE" Default="true" Mode="" Description="Include EXIF date in filenames (true/false)" Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="Use GPS" Target="USE_GPS" Default="true" Mode="" Description="Reverse-geocode GPS coordinates (true/false)" Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="GPS Detail" Target="GPS_DETAIL" Default="city" Mode="" Description="city, city-country, full, or coordinates" Type="Variable" Display="advanced" Required="false" Mask="false">city</Config>
+  <Config Name="Confidence Threshold" Target="CONFIDENCE_THRESHOLD" Default="0.6" Mode="" Description="For auto-low-confidence mode (0.0 to 1.0)" Type="Variable" Display="advanced" Required="false" Mask="false">0.6</Config>
+  <Config Name="Concurrent Workers" Target="CONCURRENT_WORKERS" Default="2" Mode="" Description="Parallel image processing workers (careful with VRAM)" Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
+  <Config Name="Process Subdirs" Target="PROCESS_SUBDIRS" Default="true" Mode="" Description="Recurse into subdirectories (true/false)" Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="Photos Dir" Target="PHOTOS_DIR" Default="/photos" Mode="" Description="Container path for photos (must match the volume mount target)" Type="Variable" Display="advanced" Required="false" Mask="false">/photos</Config>
+  <Config Name="App Data" Target="/app/data" Default="/mnt/user/appdata/a-eye" Mode="rw" Description="Persistent storage for database and thumbnail cache" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/a-eye</Config>
+  <TailscaleStateDir/>
+</Container>
