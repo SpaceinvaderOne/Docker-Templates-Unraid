@@ -7,9 +7,9 @@
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <Support/>
-  <Project/>
-  <ReadMe>https://github.com/spaceinvaderone/intel-ollama/blob/main/README.md</ReadMe>
+  <Support>https://github.com/SpaceinvaderOne/ollama-intel-gpu</Support>
+  <Project>https://github.com/SpaceinvaderOne/ollama-intel-gpu</Project>
+  <ReadMe/>
   <Overview>Ollama for Intel Arc GPUs (B580, A770, A750, etc.) powered by Intel IPEX-LLM.&#13;
 Drop-in replacement for the standard Ollama container &#x2014; exposes the same API on port 11434.&#13;
 Requires an Intel Arc GPU </Overview>
@@ -20,7 +20,7 @@ Requires an Intel Arc GPU </Overview>
   <ExtraParams>--device=/dev/dri</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1774713208</DateInstalled>
+  <DateInstalled>1775244834</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires>Intel Arc GPU (B580, A770, A750, or other Arc series) with kernel driver loaded.</Requires>
