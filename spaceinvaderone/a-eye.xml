@@ -25,6 +25,8 @@
   <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Port for the web interface" Type="Port" Display="always" Required="true" Mask="false">8001</Config>
   <Config Name="Photos Directory" Target="/photos" Default="/mnt/user/photos" Mode="rw" Description="Path to your photos directory on the host" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/photos</Config>
   <Config Name="Ollama Host" Target="OLLAMA_HOST" Default="http://localhost:11434" Mode="" Description="URL of the Ollama instance (e.g. http://192.168.1.100:11434)" Type="Variable" Display="always" Required="false" Mask="false">http://localhost:11434</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User ID for file permissions (99 = nobody on Unraid)" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group ID for file permissions (100 = users on Unraid)" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
   <Config Name="App Data" Target="/app/data" Default="/mnt/user/appdata/a-eye" Mode="rw" Description="Persistent storage for database and thumbnail cache" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/a-eye</Config>
   <TailscaleStateDir/>
 </Container>
