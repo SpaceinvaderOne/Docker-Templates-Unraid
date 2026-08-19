@@ -9,32 +9,24 @@
   <Privileged>true</Privileged>
   <Support>https://forums.unraid.net/topic/176028-support-homeassistant_inabox/</Support>
   <Project>https://github.com/SpaceinvaderOne/Home_Assistant_inabox</Project>
-  <Overview>HomeAssistant_inabox downloads, installs, and automatically manages a Home Assistant VM on your Unraid server with a single click. If the VM is found to be unexpectedly stopped, the container will automatically restart it to ensure uninterrupted service. Once installed, clicking on this container's WebUI will redirect you directly to your Home Assistant VM's WebUI.&#xD;
-&#xD;
-### Container Variables&#xD;
-**VM Name**  &#xD;
-Specify the desired name for the Home Assistant VM.  --Default `Home Assistant`&#xD;
-&#xD;
- **VM Images Location**  &#xD;
-Set the path to where your VM images are stored &#xD;
-&#xD;
-**Appdata Location**  &#xD;
-Set the directory where HomeAssistant_inabox will store its appdata.&#xD;
-&#xD;
-**Keep VM Running**  &#xD;
-Choose `Yes` to automatically monitor if the Home Assistant VM is running. If it is found to be stopped, the container will attempt to restart the VM --Default `Yes`&#xD;
-&#xD;
-**Check Time**  &#xD;
-Specify how frequently (in minutes) to check if the Home Assistant VM is running.  &#xD;
-**Default**: `15` minutes&#xD;
-&#xD;
-**HA_inabox WebUI Port**  &#xD;
-Port used by the container to access the Home Assistant WebUI --Default: `8123`&#xD;
-&#xD;
-**Notes**&#xD;
-- During the VM installation, the container dynamically builds the XML template based on the current configuration.&#xD;
-- It automatically detects the highest available QEMU machine type on the server and adjusts the VM template to use the optimal configuration.&#xD;
-- For smooth operation, ensure that the VM storage and appdata paths are correctly set according to your Unraid shares.</Overview>
+  <Deprecated>true</Deprecated>
+  <Overview>REPLACED BY HOME ASSISTANT INABOX V3. Install "HomeAssistant_inabox_v3" from Community Applications instead. This version is no longer developed.
+
+Your Home Assistant VM is not affected by any of this. It belongs to Unraid's VM manager, not to this container, so it keeps running whatever you do here - including deleting this container.
+
+**Moving to v3**
+
+Install HomeAssistant_inabox_v3 from Community Applications, open it and check your existing Home Assistant VM appears on its page, then delete this old container. v3 finds Home Assistant VMs you already have by reading the VM's own disk, so an install made by this container is recognised automatically, even while it is switched off.
+
+Unraid does not update Docker templates when a container image updates, so updating this container will not move you to v3 on its own. It will start in a notice mode that explains what has happened and where to go. Nothing is damaged by that, and your VM carries on running throughout.
+
+**Staying on v2 for now**
+
+If you are not ready to move, change this template's Repository field to `spaceinvaderone/ha_inabox:2` and restart the container. That tag is frozen at the final v2 release and will keep working exactly as it does today.
+
+---
+
+What this container did: downloaded, installed and managed a Home Assistant VM on your Unraid server, restarting the VM if it was found stopped, and redirecting this container's WebUI to the Home Assistant VM's own WebUI.</Overview>
   <Category>Tools:Utilities Other:</Category>
   <WebUI>http://[IP]:[PORT:8123]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/HomeAssistant_inabox.xml</TemplateURL>
@@ -45,7 +37,9 @@ Port used by the container to access the Home Assistant WebUI --Default: `8123`&
   <DateInstalled>1727874225</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Requires>On your server make sure to have the VM service enabled. Optional have notifications enabled for HomeAssistant_inabox to send GUI messages during install.</Requires>
+  <Requires>This container has been replaced by HomeAssistant_inabox_v3. Install that from Community Applications instead.
+
+On your server make sure to have the VM service enabled. Optional have notifications enabled for HomeAssistant_inabox to send GUI messages during install.</Requires>
   <Config Name="VM Name" Target="VMNAME" Default="" Mode="" Description="Enter a different name if you want the VM to have a name other than the OS name. If left blank, the container will use the default OS name installed." Type="Variable" Display="always" Required="false" Mask="false">Home Assistant</Config>
   <Config Name="Home Assistant URL" Target="CHECKURL" Default="https://www.home-assistant.io/installation/linux" Mode="" Description="page to scrape for download link" Type="Variable" Display="always" Required="true" Mask="false">https://www.home-assistant.io/installation/linux</Config>
   <Config Name="VM Images Location" Target="/domains" Default="/mnt/user/domains/" Mode="rw" Description="Please choose the storage location for your VM images on the server. The default path is set to /mnt/user/domains/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/domains/</Config>
