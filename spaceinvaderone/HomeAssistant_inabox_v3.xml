@@ -7,9 +7,6 @@
   <MyMAC/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <!-- Ed's decision, 2026-08-19: v3 reuses the existing v2 support thread rather
-       than starting a new one, so the thread's history stays with the project.
-       Verified reachable (HTTP 200). -->
   <Support>https://forums.unraid.net/topic/176028-support-homeassistant_inabox</Support>
   <Project>https://github.com/SpaceinvaderOne/Home_Assistant_inabox</Project>
   <ReadMe>https://github.com/SpaceinvaderOne/Home_Assistant_inabox/blob/main/README.md</ReadMe>
@@ -26,21 +23,7 @@ The wizard can also pass a USB device on this server through to the Home Assista
 This needs direct access to your VM manager (libvirt), your Domains share, Docker's own socket and a handful of Unraid system paths in order to build and manage the VM correctly - that is expected and required, not a mistake in this template. It has no login of its own, so keep it on a trusted LAN rather than exposing it to the internet.</Overview>
   <Category>HomeAutomation:</Category>
   <WebUI>http://[IP]:[PORT:9123]</WebUI>
-  <!-- Self-referencing, and it has to be: Community Applications treats this as
-       the template's canonical identity for review. It must therefore point at
-       the copy in Ed's own templates repo, which is what CA scrapes and where
-       every other spaceinvaderone template lives, not at this project's code
-       repo. 404s until the file is added there. -->
   <TemplateURL>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/HomeAssistant_inabox_v3.xml</TemplateURL>
-  <!-- The same container icon v2's published template uses, and for the same
-       reason it was the right choice there: it lives in Docker-Templates-Unraid,
-       which hosts Ed's icons and is unaffected by anything the v3 update does to
-       this repo's own folder layout. Verified reachable (HTTP 200).
-
-       Not to be confused with Hassio_2.png, which is the *VM* icon (the logo
-       Unraid's VM manager shows beside the Home Assistant VM itself, named by
-       app.models.VMSettings.icon and placed via this template's "VM Icons"
-       mount). Different picture, different consumer, different lifetime. -->
   <Icon>https://raw.githubusercontent.com/SpaceinvaderOne/Docker-Templates-Unraid/master/spaceinvaderone/docker_icons/HomeAssistant.png</Icon>
   <ExtraParams/>
   <PostArgs/>
