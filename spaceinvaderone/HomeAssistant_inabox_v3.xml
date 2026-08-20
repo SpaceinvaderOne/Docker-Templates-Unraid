@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>HomeAssistant_inabox_v3</Name>
-  <Repository>spaceinvaderone/ha_inabox:3</Repository>
+  <Repository>spaceinvaderone/ha_inabox:latest</Repository>
   <Registry>https://hub.docker.com/repository/docker/spaceinvaderone/ha_inabox/general</Registry>
   <Network>bridge</Network>
   <MyMAC/>
